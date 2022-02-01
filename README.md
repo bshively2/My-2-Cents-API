@@ -1,5 +1,5 @@
 # My-2-Cents-API
 
-With:
-
-TEAM FIRE: Ben Herbert,
+#TEAM FIRE:
+Ben Herbert
+Shaul Stavi
