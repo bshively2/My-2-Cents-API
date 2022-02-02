@@ -4,6 +4,15 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>f18971db-e396-4c15-bb13-84cb073f1e95</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\My2Cents.DataInfrastructure\My2Cents.DataInfrastructure.csproj" />
+  </ItemGroup>
 
 </Project>
