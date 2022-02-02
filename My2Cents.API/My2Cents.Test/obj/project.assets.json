@@ -6040,19 +6040,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\JingJing Zhuang\\.nuget\\packages\\": {}
+    "C:\\Users\\bbruc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Study_Documents\\Revature\\Training\\P3-My2Cents\\My-2-Cents-API\\My2Cents.API\\My2Cents.Test\\My2Cents.Test.csproj",
+      "projectUniqueName": "C:\\Users\\bbruc\\Revature\\Project3\\My-2-Cents-API\\My2Cents.API\\My2Cents.Test\\My2Cents.Test.csproj",
       "projectName": "My2Cents.Test",
-      "projectPath": "D:\\Study_Documents\\Revature\\Training\\P3-My2Cents\\My-2-Cents-API\\My2Cents.API\\My2Cents.Test\\My2Cents.Test.csproj",
-      "packagesPath": "C:\\Users\\JingJing Zhuang\\.nuget\\packages\\",
-      "outputPath": "D:\\Study_Documents\\Revature\\Training\\P3-My2Cents\\My-2-Cents-API\\My2Cents.API\\My2Cents.Test\\obj\\",
+      "projectPath": "C:\\Users\\bbruc\\Revature\\Project3\\My-2-Cents-API\\My2Cents.API\\My2Cents.Test\\My2Cents.Test.csproj",
+      "packagesPath": "C:\\Users\\bbruc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bbruc\\Revature\\Project3\\My-2-Cents-API\\My2Cents.API\\My2Cents.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\JingJing Zhuang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bbruc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6120,7 +6120,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
