@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\melin\\OneDrive\\Desktop\\RevGit\\My_2_Cents\\My-2-Cents-API\\My2Cents.API\\My2Cents.DataInfrastructure\\My2Cents.DataInfrastructure.csproj": {}
+    "D:\\Revature\\My2Cents\\My-2-Cents-API\\My2Cents.API\\My2Cents.DataInfrastructure\\My2Cents.DataInfrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\melin\\OneDrive\\Desktop\\RevGit\\My_2_Cents\\My-2-Cents-API\\My2Cents.API\\My2Cents.DataInfrastructure\\My2Cents.DataInfrastructure.csproj": {
+    "D:\\Revature\\My2Cents\\My-2-Cents-API\\My2Cents.API\\My2Cents.DataInfrastructure\\My2Cents.DataInfrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\melin\\OneDrive\\Desktop\\RevGit\\My_2_Cents\\My-2-Cents-API\\My2Cents.API\\My2Cents.DataInfrastructure\\My2Cents.DataInfrastructure.csproj",
+        "projectUniqueName": "D:\\Revature\\My2Cents\\My-2-Cents-API\\My2Cents.API\\My2Cents.DataInfrastructure\\My2Cents.DataInfrastructure.csproj",
         "projectName": "My2Cents.DataInfrastructure",
-        "projectPath": "C:\\Users\\melin\\OneDrive\\Desktop\\RevGit\\My_2_Cents\\My-2-Cents-API\\My2Cents.API\\My2Cents.DataInfrastructure\\My2Cents.DataInfrastructure.csproj",
-        "packagesPath": "C:\\Users\\melin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\melin\\OneDrive\\Desktop\\RevGit\\My_2_Cents\\My-2-Cents-API\\My2Cents.API\\My2Cents.DataInfrastructure\\obj\\",
+        "projectPath": "D:\\Revature\\My2Cents\\My-2-Cents-API\\My2Cents.API\\My2Cents.DataInfrastructure\\My2Cents.DataInfrastructure.csproj",
+        "packagesPath": "C:\\Users\\Kyler Dennis\\.nuget\\packages\\",
+        "outputPath": "D:\\Revature\\My2Cents\\My-2-Cents-API\\My2Cents.API\\My2Cents.DataInfrastructure\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\melin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Kyler Dennis\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -70,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
