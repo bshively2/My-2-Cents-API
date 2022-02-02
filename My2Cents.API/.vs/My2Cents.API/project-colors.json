@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "e910e00a-8516-445d-905d-b05951f63cd2": {
+      "ProjectGuid": "e910e00a-8516-445d-905d-b05951f63cd2",
+      "DisplayName": "My2Cents.DataInfrastructure",
+      "ColorIndex": 0
+    },
+    "5dd534a2-9402-498c-b46c-d425dc9b35d0": {
+      "ProjectGuid": "5dd534a2-9402-498c-b46c-d425dc9b35d0",
+      "DisplayName": "My2Cents.API",
+      "ColorIndex": 1
+    },
+    "428a2c3e-2d48-463d-827c-b771c724716a": {
+      "ProjectGuid": "428a2c3e-2d48-463d-827c-b771c724716a",
+      "DisplayName": "My2Cents.Logic",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
