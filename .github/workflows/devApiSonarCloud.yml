@@ -53,6 +53,10 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
+<<<<<<< HEAD
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"My-2-Cents-API" /o:"revature-2-cents" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+=======
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"My-2-Cents-API" /o:"revature-2-cents" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="D:\a\My-2-Cents-API\My-2-Cents-API\My2Cents.API\My2Cents.Test\coverage.opencover.xml"
+>>>>>>> 423367cc04860c8571d0e35183d25f58a7ac4bb4
           dotnet build ./My2Cents.API/My2Cents.API.sln
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
