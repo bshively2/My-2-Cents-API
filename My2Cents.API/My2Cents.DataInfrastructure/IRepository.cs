@@ -10,6 +10,6 @@ namespace My2Cents.DataInfrastructure
     public interface IRepository
     {
 
-     Task<IEnumerable<TransactionDto>> GetTransactions(int userId);
+     Task<IEnumerable<TransactionDto>> GetTransactions(int AccountId);
   }
 }

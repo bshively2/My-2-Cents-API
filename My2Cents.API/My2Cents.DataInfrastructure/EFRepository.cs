@@ -23,24 +23,26 @@ namespace My2Cents.DataInfrastructure
       _logger = logger;
     }
 
-    public async Task<IEnumerable<TransactionDto>> GetTransactions(int userId)
+    public async Task<IEnumerable<TransactionDto>> GetTransactions(int AccountId)
     {
 
-      return await (from tr in _context.Transactions
-                    join ac in _context.Accounts on tr.AccountId equals ac.AccountId
+      return await (from ac in _context.Accounts
+                    join tr in _context.Transactions on ac.AccountId equals tr.AccountId into trjoin
+                    from tran in trjoin.DefaultIfEmpty()                    
                     join at in _context.AccountTypes on ac.AccountTypeId equals at.AccountTypeId
-                    where ac.UserId == userId
+                    where tran.AccountId == AccountId
+
                     select new TransactionDto
                     {
-                      TransactionId = tr.TransactionId,
-                      AccountId = tr.AccountId,
-                      Amount = tr.Amount,
-                      TransactionName = tr.TransactionName,
-                      TransactionDate = tr.TransactionDate,
-                      Authorized = tr.Authorized,
-                      LineAmount=tr.LineAmount,
+                      TransactionId = tran.TransactionId,
+                      AccountId = tran.AccountId,
+                      Amount = tran.Amount,
+                      TransactionName = tran.TransactionName,
+                      TransactionDate = tran.TransactionDate,
+                      Authorized = tran.Authorized,
+                      LineAmount=tran.LineAmount,
                       AccountType=at.AccountType1,
-                      TotalBalance=ac.TotalBalance
+                      TotalBalance= ac.TotalBalance
                     }).ToListAsync();
 
 
@@ -55,7 +57,7 @@ namespace My2Cents.DataInfrastructure
     //public decimal? TotalBalance { get; set; }
 
 
-    _logger.LogInformation("function GetIncome user id {userId}", userId);
+    _logger.LogInformation("function GetTransaction Account Id {int AccountId}", AccountId);
     }
 
 

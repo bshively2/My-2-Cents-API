@@ -19,12 +19,12 @@ namespace My2Cents.API.Controllers
     }
 
 
-    [HttpGet("{userId}")]
-    public async Task<IEnumerable<TransactionDto>> GetTransactions(int userId)
+    [HttpGet("{AccountId}")]
+    public async Task<IEnumerable<TransactionDto>> GetTransactions(int AccountId)
     {
 
       Response.Headers.Add("Access-Control-Allow-Origin", "*");
-      return await _repository.GetTransactions(userId);
+      return await _repository.GetTransactions(AccountId);
 
     }
 
