@@ -1,11 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using My2Cents.API.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace My2Cents.DataInfrastructure
 {
@@ -27,27 +22,38 @@ namespace My2Cents.DataInfrastructure
             _logger = logger;
         }
 
-        public async Task<IEnumerable<UserProfile_Dto>> GetUserInfo(int UserId)
+        public async Task<IActionResult> GetUserInfo(int UserId)
         {
             _logger.LogInformation($"GetUserInfo {UserId}", UserId);
 
-            return await (from ex in _context.UserProfiles
-                          where ex.UserId == UserId
-                          select new UserProfile_Dto
-                          {
-                              UserID = ex.UserId,
-                              FirstName = ex.FirstName,
-                              LastName = ex.LastName,
-                              Email = ex.Email,
-                              SecondaryEmail = ex.SecondaryEmail,
-                              MailingAddress = ex.MailingAddress,
-                              Phone = (decimal)ex.Phone,
-                              City = ex.City,
-                              State = ex.State,
-                              Employer = ex.Employer,
-                              WorkAddress = ex.WorkAddress,
-                              WorkPhone = (decimal)ex.WorkPhone
-                          }).ToListAsync();
+            var userProfileInfo = await _context.UserProfiles
+                .Where(u => u.UserId == UserId)
+                .Include(l => l.User)
+                .FirstOrDefaultAsync();
+
+            if (userProfileInfo == null)
+            {
+                return NotFound();
+            }
+
+            return userProfileInfo;
+
+            //return await (from ex in _context.UserProfiles
+            //              where ex.UserId == UserId
+            //              select new UserProfile_Dto
+            //              {
+            //                  UserID = ex.UserId,
+            //                  FirstName = ex.FirstName,
+            //                  LastName = ex.LastName,
+            //                  SecondaryEmail = ex.SecondaryEmail,
+            //                  MailingAddress = ex.MailingAddress,
+            //                  Phone = ex.Phone,
+            //                  City = ex.City,
+            //                  State = ex.State,
+            //                  Employer = ex.Employer,
+            //                  WorkAddress = ex.WorkAddress,
+            //                  WorkPhone = ex.WorkPhone
+            //              }).ToListAsync();
         }
     }
 }

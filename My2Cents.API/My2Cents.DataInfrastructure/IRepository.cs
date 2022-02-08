@@ -1,4 +1,5 @@
-﻿using My2Cents.API.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using My2Cents.API.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace My2Cents.DataInfrastructure
 {
     public interface IRepository
     {
-        Task<IEnumerable<UserProfile_Dto>> GetUserInfo(int userId);
+        Task<IActionResult> GetUserInfo(int userId);
     }
 }
