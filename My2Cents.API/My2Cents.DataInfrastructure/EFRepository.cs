@@ -31,7 +31,7 @@ namespace My2Cents.DataInfrastructure
                     from tran in trjoin.DefaultIfEmpty()                    
                     join at in _context.AccountTypes on ac.AccountTypeId equals at.AccountTypeId
                     where tran.AccountId == AccountId
-
+                    orderby tran.TransactionDate descending
                     select new TransactionDto
                     {
                       TransactionId = tran.TransactionId,

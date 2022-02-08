@@ -20,12 +20,13 @@ namespace My2Cents.API.Controllers
 
 
     [HttpGet("{AccountId}")]
-    public async Task<IEnumerable<TransactionDto>> GetTransactions(int AccountId)
+    public async Task<ActionResult<IEnumerable<TransactionDto>>> GetTransactions(int AccountId)
     {
-
       Response.Headers.Add("Access-Control-Allow-Origin", "*");
-      return await _repository.GetTransactions(AccountId);
-
+      var Account=await _repository.GetTransactions(AccountId);
+      if (Account.Count() == 0)
+        return BadRequest("Account not found.");
+      return Ok(Account);
     }
 
   }
