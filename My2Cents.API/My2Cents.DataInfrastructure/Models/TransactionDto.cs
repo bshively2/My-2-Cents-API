@@ -17,5 +17,7 @@ namespace My2Cents.DataInfrastructure.Models
     public decimal LineAmount { get; set; }
     public string? AccountType { get; set; }
     public decimal? TotalBalance { get; set; }
-  }
+
+      
+    }
 }
