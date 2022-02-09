@@ -10,6 +10,7 @@ namespace My2Cents.DataInfrastructure
     public interface IRepository
     {
         Task<IEnumerable<UserProfile_Dto>> GetUserInfo(int userId);
+
         Task<int> PostTransactionsAsync(int from, int to, decimal amount);
     }
 }
