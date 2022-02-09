@@ -17,9 +17,18 @@ namespace My2Cents.API.Controllers
         }
 
         [HttpGet("Accounts")]
-        public async Task<IEnumerable<AccountListDto>> GetUserAccounts(int UserId)
+        public async Task<ActionResult<IEnumerable<AccountListDto>>> GetUserAccounts(int UserId)
         {
             var userAccountList = await _repository.GetUserAccounts(UserId);
+
+            if (userAccountList.Value == null)
+            {
+                return BadRequest();
+            }
+            else if (userAccountList.Value.Count() < 1)
+            {
+                return NoContent();
+            }
 
             return userAccountList;
         }

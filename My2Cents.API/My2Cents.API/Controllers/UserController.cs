@@ -17,9 +17,18 @@ namespace My2Cents.API.Controllers
         }
 
         [HttpGet("Info")]
-        public async Task<IEnumerable<UserProfileDto>> GetUserInfo(int UserId)
+        public async Task<ActionResult<IEnumerable<UserProfileDto>>> GetUserInfo(int UserId)
         {
             var userProfileInfo = await _repository.GetUserInfo(UserId);
+
+            if (userProfileInfo.Value == null)
+            {
+                return BadRequest();
+            }
+            else if (userProfileInfo.Value.Count() < 1)
+            {
+                return NoContent();
+            }    
 
             return userProfileInfo;
         }
@@ -47,23 +56,9 @@ namespace My2Cents.API.Controllers
         }
 
         [HttpPut("Update")]
-        public async Task<UserProfile> PutUserInfo(int UserId, UserProfileDto profile)
+        public async Task<UserProfile> PutUserInfo(int UserId, UpdateUserDto profile)
         {
-            UserProfile userProfile = new()
-            {
-                FirstName = profile.FirstName,
-                LastName = profile.LastName,
-                SecondaryEmail = profile.SecondaryEmail,
-                MailingAddress = profile.MailingAddress,
-                Phone = profile.Phone,
-                City = profile.City,
-                State = profile.State,
-                Employer = profile.Employer,
-                WorkAddress = profile.WorkAddress,
-                WorkPhone = profile.WorkPhone
-            };
-
-            var updateUserProfileInfo = await _repository.PutUserInfo(UserId, userProfile);
+            var updateUserProfileInfo = await _repository.PutUserInfo(UserId, profile);
 
             return updateUserProfileInfo;
         }

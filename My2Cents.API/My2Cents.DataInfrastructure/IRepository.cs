@@ -10,9 +10,9 @@ namespace My2Cents.DataInfrastructure
 {
     public interface IRepository
     {
-        Task<IEnumerable<UserProfileDto>> GetUserInfo(int userId);
+        Task<ActionResult<IEnumerable<UserProfileDto>>> GetUserInfo(int userId);
         Task<UserProfile> PostNewUserInfo(UserProfile profile);
-        Task<UserProfile> PutUserInfo(int UserId, UserProfile profile);
-        Task<IEnumerable<AccountListDto>> GetUserAccounts(int userId);
+        Task<UserProfile> PutUserInfo(int UserId, UpdateUserDto profile);
+        Task<ActionResult<IEnumerable<AccountListDto>>> GetUserAccounts(int userId);
     }
 }

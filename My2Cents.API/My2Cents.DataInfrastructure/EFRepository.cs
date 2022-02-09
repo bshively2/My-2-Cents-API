@@ -17,7 +17,7 @@ namespace My2Cents.DataInfrastructure
             _logger = logger;
         }
 
-        public async Task<IEnumerable<UserProfileDto>> GetUserInfo(int UserId)
+        public async Task<ActionResult<IEnumerable<UserProfileDto>>> GetUserInfo(int UserId)
         {
             return await (from io in _context.UserLogins
                           join ic in _context.UserProfiles
@@ -52,9 +52,24 @@ namespace My2Cents.DataInfrastructure
             return newUserProfileInfo!;
         }
 
-        public async Task<UserProfile> PutUserInfo(int UserId, UserProfile profile)
+        public async Task<UserProfile> PutUserInfo(int UserId, UpdateUserDto profile)
         {
-            await _context.UserProfiles.AddAsync(profile);
+            UserProfile userProfile = new()
+            {
+                UserId = UserId,
+                FirstName = profile.FirstName,
+                LastName = profile.LastName,
+                SecondaryEmail = profile.SecondaryEmail,
+                MailingAddress = profile.MailingAddress,
+                Phone = profile.Phone,
+                City = profile.City,
+                State = profile.State,
+                Employer = profile.Employer,
+                WorkAddress = profile.WorkAddress,
+                WorkPhone = profile.WorkPhone
+            };
+
+            _context.UserProfiles.Update(userProfile);
             await _context.SaveChangesAsync();
 
             var updateUserProfileInfo = await _context.UserProfiles
@@ -64,7 +79,7 @@ namespace My2Cents.DataInfrastructure
             return updateUserProfileInfo!;
         }
 
-        public async Task<IEnumerable<AccountListDto>> GetUserAccounts(int userId)
+        public async Task<ActionResult<IEnumerable<AccountListDto>>> GetUserAccounts(int userId)
         {
 
             return await (from ic in _context.Accounts
