@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using My2Cents.API.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +16,84 @@ namespace My2Cents.DataInfrastructure
         public EfRepository(string connectionString)
         {
             _connectionString = connectionString ?? throw new ArgumentNullException(nameof(connectionString));
+        }
+
+        private readonly My2CentsContext _context;
+        private readonly ILogger<EfRepository> _logger;
+
+        public async Task<int> PostTransactionsAsync(int from, int to, decimal amount)
+        {
+            
+            var payFromAccount = _context.Accounts.SingleOrDefault(c => c.AccountId == from);
+            var payToAccount = _context.Accounts.SingleOrDefault(b => b.AccountId == to);
+
+            if (payFromAccount != null && payToAccount != null && payFromAccount.TotalBalance >= amount
+                //&& amount <= DailySpendLimit
+                )
+            {
+                // Transfer Funds
+                payFromAccount.TotalBalance -= amount;
+                payToAccount.TotalBalance += amount;
+
+                //Enter Records
+                var PayFromRecord = new Transaction
+                {
+                    AccountId = from,
+                    Amount = amount,
+                    TransactionName = $"To Account # {to}",
+                    Authorized = "Authorized by Bank",
+                    LineAmount = 12345
+                };
+                var PayToRecord = new Transaction
+                {
+                    AccountId = to,
+                    Amount = amount,
+                    TransactionName = $"From Account # {from}",
+                    Authorized = "Authorized by Bank",
+                    LineAmount = 12345
+                };
+
+                await _context.AddAsync(PayFromRecord);
+                await _context.AddAsync(PayToRecord);
+                return await _context.SaveChangesAsync();
+
+
+            }
+            else
+            {
+                return 0;
+            }
+
+
+            return 0;
+        }
+        public EfRepository(My2CentsContext context, ILogger<EfRepository> logger)
+        {
+            _context = context;
+            _logger = logger;
+        }
+
+        public async Task<IEnumerable<UserProfile_Dto>> GetUserInfo(int UserId)
+        {
+            _logger.LogInformation($"GetUserInfo {UserId}", UserId);
+
+            return await (from ex in _context.UserProfiles
+                          where ex.UserId == UserId
+                          select new UserProfile_Dto
+                          {
+                              UserID = ex.UserId,
+                              FirstName = ex.FirstName,
+                              LastName = ex.LastName,
+                              //Email = ex.Email,
+                              SecondaryEmail = ex.SecondaryEmail,
+                              MailingAddress = ex.MailingAddress,
+                              //Phone = (decimal)ex.Phone,
+                              City = ex.City,
+                              State = ex.State,
+                              Employer = ex.Employer,
+                              WorkAddress = ex.WorkAddress,
+                              //WorkPhone = (decimal)ex.WorkPhone
+                          }).ToListAsync();
         }
     }
 }

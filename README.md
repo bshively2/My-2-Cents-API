@@ -1,5 +1,3 @@
 # My-2-Cents-API
 
-#TEAM FIRE:
-Ben Herbert
-Shaul Stavi
+## Azure Web Sevice URL: https://my2centsapi.azurewebsites.net/

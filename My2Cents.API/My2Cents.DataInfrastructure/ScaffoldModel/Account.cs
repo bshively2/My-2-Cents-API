@@ -11,12 +11,13 @@ namespace My2Cents.DataInfrastructure
         }
 
         public int AccountId { get; set; }
-        public int? UserId { get; set; }
-        public decimal? TotalBalance { get; set; }
-        public string? AccountType { get; set; }
-        public decimal? Interest { get; set; }
+        public int UserId { get; set; }
+        public decimal TotalBalance { get; set; }
+        public int AccountTypeId { get; set; }
+        public decimal Interest { get; set; }
 
-        public virtual UserProfile? User { get; set; }
+        public virtual AccountType AccountType { get; set; } = null!;
+        public virtual UserProfile User { get; set; } = null!;
         public virtual ICollection<Transaction> Transactions { get; set; }
     }
 }
