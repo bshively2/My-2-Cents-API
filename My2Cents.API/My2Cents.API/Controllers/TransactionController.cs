@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using My2Cents.API.Models;
 using My2Cents.DataInfrastructure;
 using My2Cents.DataInfrastructure.Models;
 
@@ -15,12 +14,6 @@ namespace My2Cents.API.Controllers
         public TransactionController(IRepository repository)
         {
             _repository = repository;
-        }
-
-        [HttpPost]
-        public async Task<int> PostTransactionsAsync([FromBody] Transfer_Dto Record)
-        {
-            return await _repository.PostTransactionsAsync(Record.From, Record.To, Record.Amount);
         }
     }
 }
