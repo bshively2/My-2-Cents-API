@@ -27,9 +27,7 @@ namespace My2Cents.DataInfrastructure
             var payFromAccount = _context.Accounts.SingleOrDefault(c => c.AccountId == from);
             var payToAccount = _context.Accounts.SingleOrDefault(b => b.AccountId == to);
 
-            if (payFromAccount != null && payToAccount != null && payFromAccount.TotalBalance >= amount
-                //&& amount <= DailySpendLimit
-                )
+            if (payFromAccount != null && payToAccount != null && payFromAccount.TotalBalance >= amount)
             {
                 // Transfer Funds
                 payFromAccount.TotalBalance -= amount;
@@ -39,7 +37,7 @@ namespace My2Cents.DataInfrastructure
                 var PayFromRecord = new Transaction
                 {
                     AccountId = from,
-                    Amount = amount,
+                    Amount = -amount,
                     TransactionName = $"To Account # {to}",
                     Authorized = "Authorized by Bank",
                     LineAmount = 12345
@@ -64,8 +62,6 @@ namespace My2Cents.DataInfrastructure
                 return 0;
             }
 
-
-            return 0;
         }
         public EfRepository(My2CentsContext context, ILogger<EfRepository> logger)
         {
