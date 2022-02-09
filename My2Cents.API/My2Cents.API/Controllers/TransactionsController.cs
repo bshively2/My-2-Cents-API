@@ -25,9 +25,10 @@ namespace My2Cents.API.Controllers
       Response.Headers.Add("Access-Control-Allow-Origin", "*");
       var Account=await _repository.GetTransactions(AccountId);
       if (Account.Count() == 0)
-        return BadRequest("Account not found.");
+        {
+            return BadRequest("Account not found.");
+        }
       return Ok(Account);
     }
-
   }
 }

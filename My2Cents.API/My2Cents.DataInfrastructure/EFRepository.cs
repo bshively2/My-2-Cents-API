@@ -11,7 +11,7 @@ namespace My2Cents.DataInfrastructure
 {
     public class EfRepository : IRepository
     {
-  //      private readonly string _connectionString;
+      private readonly string _connectionString;
 
 
     private readonly My2CentsContext _context;
@@ -62,9 +62,9 @@ namespace My2Cents.DataInfrastructure
 
 
 
-    //public EfRepository(string connectionString)
-    //    {
-    //        _connectionString = connectionString ?? throw new ArgumentNullException(nameof(connectionString));
-    //    }
+    public EfRepository(string connectionString)
+    {
+        _connectionString = connectionString ?? throw new ArgumentNullException(nameof(connectionString));
+    }
   }
 }
