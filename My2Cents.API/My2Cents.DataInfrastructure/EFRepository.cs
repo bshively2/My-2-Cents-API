@@ -19,16 +19,13 @@ namespace My2Cents.DataInfrastructure
 
         public async Task<ActionResult<IEnumerable<UserProfileDto>>> GetUserInfo(int UserId)
         {
-            return await (from io in _context.UserLogins
-                          join ic in _context.UserProfiles
-                          on io.UserId equals ic.UserId
+            return await (from ic in _context.UserProfiles
                           where ic.UserId == UserId
                           select new UserProfileDto
                           {
-                              UserId = ic.UserId,
+                              UserId = UserId,
                               FirstName = ic.FirstName,
                               LastName = ic.LastName,
-                              Email = io.Email,
                               SecondaryEmail = ic.SecondaryEmail,
                               MailingAddress = ic.MailingAddress,
                               Phone = ic.Phone,
