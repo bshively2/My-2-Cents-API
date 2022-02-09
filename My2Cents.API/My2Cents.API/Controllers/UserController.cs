@@ -56,7 +56,7 @@ namespace My2Cents.API.Controllers
         }
 
         [HttpPut("Update")]
-        public async Task<UserProfile> PutUserInfo(int UserId, UpdateUserDto profile)
+        public async Task<UserProfile> PutUserInfo(int UserId, UserProfileDto profile)
         {
             var updateUserProfileInfo = await _repository.PutUserInfo(UserId, profile);
 
