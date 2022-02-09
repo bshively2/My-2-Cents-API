@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using My2Cents.DataInfrastructure;
+using My2Cents.DataInfrastructure.Models;
 
 namespace My2Cents.API.Controllers
 {
@@ -15,12 +16,12 @@ namespace My2Cents.API.Controllers
             _repository = repository;
         }
 
-        //[HttpGet("Accounts")]
-        //public async Task<AccountType> GetUserAccounts(int UserId)
-        //{
-        //    var userAccountList = await _repository.GetUserAccounts(UserId);
+        [HttpGet("Accounts")]
+        public async Task<IEnumerable<AccountListDto>> GetUserAccounts(int UserId)
+        {
+            var userAccountList = await _repository.GetUserAccounts(UserId);
 
-        //    return userAccountList;
-        //}
+            return userAccountList;
+        }
     }
 }

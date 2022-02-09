@@ -17,7 +17,7 @@ namespace My2Cents.API.Controllers
         }
 
         [HttpGet("Info")]
-        public async Task<UserProfile> GetUserInfo(int UserId)
+        public async Task<IEnumerable<UserProfileDto>> GetUserInfo(int UserId)
         {
             var userProfileInfo = await _repository.GetUserInfo(UserId);
 

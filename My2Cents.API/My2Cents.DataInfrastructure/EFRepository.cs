@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using My2Cents.DataInfrastructure.Models;
 
 namespace My2Cents.DataInfrastructure
 {
@@ -16,17 +17,27 @@ namespace My2Cents.DataInfrastructure
             _logger = logger;
         }
 
-        public async Task<UserProfile> GetUserInfo(int UserId)
+        public async Task<IEnumerable<UserProfileDto>> GetUserInfo(int UserId)
         {
-            _logger.LogInformation($"GetUserInfo {UserId}", UserId);
-
-
-            var userProfileInfo = await _context.UserProfiles
-                .Include(l => l.User)
-                .Where(u => u.UserId == UserId)
-                .FirstOrDefaultAsync();
-
-            return userProfileInfo!;
+            return await (from io in _context.UserLogins
+                          join ic in _context.UserProfiles
+                          on io.UserId equals ic.UserId
+                          where ic.UserId == UserId
+                          select new UserProfileDto
+                          {
+                              UserId = ic.UserId,
+                              FirstName = ic.FirstName,
+                              LastName = ic.LastName,
+                              Email = io.Email,
+                              SecondaryEmail = ic.SecondaryEmail,
+                              MailingAddress = ic.MailingAddress,
+                              Phone = ic.Phone,
+                              City = ic.City,
+                              State = ic.State,
+                              Employer = ic.Employer,
+                              WorkAddress = ic.WorkAddress,
+                              WorkPhone = ic.WorkPhone
+                          }).ToListAsync();
         }
 
         public async Task<UserProfile> PostNewUserInfo(UserProfile profile)
@@ -51,6 +62,23 @@ namespace My2Cents.DataInfrastructure
                 .FirstOrDefaultAsync();
 
             return updateUserProfileInfo!;
+        }
+
+        public async Task<IEnumerable<AccountListDto>> GetUserAccounts(int userId)
+        {
+
+            return await (from ic in _context.Accounts
+                          join io in _context.AccountTypes
+                          on ic.AccountTypeId equals io.AccountTypeId
+                          where ic.UserId == userId
+                          select new AccountListDto
+                          {
+                              AccountID = ic.AccountId,
+                              UserID = ic.UserId,
+                              TotalBalance = ic.TotalBalance,
+                              AccountType = io.AccountType1,
+                              Interest = ic.Interest
+                          }).ToListAsync();
         }
     }
 }
