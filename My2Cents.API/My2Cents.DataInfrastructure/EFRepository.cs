@@ -6,12 +6,6 @@ namespace My2Cents.DataInfrastructure
 {
     public class EfRepository : IRepository
     {
-        private readonly string _connectionString;
-
-        public EfRepository(string connectionString)
-        {
-            _connectionString = connectionString ?? throw new ArgumentNullException(nameof(connectionString));
-        }
 
         private readonly My2CentsContext _context;
         private readonly ILogger<EfRepository> _logger;
@@ -22,38 +16,18 @@ namespace My2Cents.DataInfrastructure
             _logger = logger;
         }
 
-        public async Task<IActionResult> GetUserInfo(int UserId)
+        public async Task<ActionResult<UserProfile>> GetUserInfo(int UserId)
         {
             _logger.LogInformation($"GetUserInfo {UserId}", UserId);
 
+
             var userProfileInfo = await _context.UserProfiles
-                .Where(u => u.UserId == UserId)
                 .Include(l => l.User)
+                .Where(u => u.UserId == UserId)
                 .FirstOrDefaultAsync();
 
-            if (userProfileInfo == null)
-            {
-                return NotFound();
-            }
+            return userProfileInfo!;
 
-            return userProfileInfo;
-
-            //return await (from ex in _context.UserProfiles
-            //              where ex.UserId == UserId
-            //              select new UserProfile_Dto
-            //              {
-            //                  UserID = ex.UserId,
-            //                  FirstName = ex.FirstName,
-            //                  LastName = ex.LastName,
-            //                  SecondaryEmail = ex.SecondaryEmail,
-            //                  MailingAddress = ex.MailingAddress,
-            //                  Phone = ex.Phone,
-            //                  City = ex.City,
-            //                  State = ex.State,
-            //                  Employer = ex.Employer,
-            //                  WorkAddress = ex.WorkAddress,
-            //                  WorkPhone = ex.WorkPhone
-            //              }).ToListAsync();
         }
     }
 }

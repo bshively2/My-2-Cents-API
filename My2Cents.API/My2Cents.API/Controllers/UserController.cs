@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using My2Cents.API.Models;
 using My2Cents.DataInfrastructure;
 
 namespace My2Cents.API.Controllers
@@ -18,9 +17,17 @@ namespace My2Cents.API.Controllers
 
         [Route("Info")]
         [HttpGet]
-        public async Task<IEnumerable<UserProfile>> GetUserInfo(int UserId)
+        public async Task<ActionResult<UserProfile>> GetUserInfo(int UserId)
         {
-            return await _repository.GetUserInfo(UserId);
+
+            var userProfileInfo = await _repository.GetUserInfo(UserId);
+
+            if (userProfileInfo == null)
+            {
+                return NoContent();
+            }    
+
+            return userProfileInfo;
         }
     }
 }
