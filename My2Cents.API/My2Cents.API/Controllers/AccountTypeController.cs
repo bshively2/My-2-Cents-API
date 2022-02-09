@@ -15,12 +15,12 @@ namespace My2Cents.API.Controllers
             _repository = repository;
         }
 
-        [HttpGet("Accounts")]
-        public async Task<AccountType> GetUserAccounts(int UserId)
-        {
-            var userAccountList = await _repository.GetUserAccounts(UserId);
+        //[HttpGet("Accounts")]
+        //public async Task<AccountType> GetUserAccounts(int UserId)
+        //{
+        //    var userAccountList = await _repository.GetUserAccounts(UserId);
 
-            return userAccountList;
-        }
+        //    return userAccountList;
+        //}
     }
 }

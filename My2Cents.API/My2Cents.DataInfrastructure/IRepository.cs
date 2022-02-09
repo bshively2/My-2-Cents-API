@@ -11,5 +11,6 @@ namespace My2Cents.DataInfrastructure
     {
         Task<UserProfile> GetUserInfo(int userId);
         Task<UserProfile> PostNewUserInfo(UserProfile profile);
+        Task<UserProfile> PutUserInfo(int UserId, UserProfile profile);
     }
 }
