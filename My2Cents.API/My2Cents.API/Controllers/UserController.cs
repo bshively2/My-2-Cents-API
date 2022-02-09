@@ -16,8 +16,7 @@ namespace My2Cents.API.Controllers
             _repository = repository;
         }
 
-        [Route("Info")]
-        [HttpGet]
+        [HttpGet("Info")]
         public async Task<UserProfile> GetUserInfo(int UserId)
         {
             var userProfileInfo = await _repository.GetUserInfo(UserId);
@@ -25,7 +24,7 @@ namespace My2Cents.API.Controllers
             return userProfileInfo;
         }
 
-        [HttpPost("Info")]
+        [HttpPost("NewUser")]
         public async Task<UserProfile> PostNewUserInfo(UserProfileDto profile)
         {
             UserProfile userProfile = new()
@@ -45,6 +44,26 @@ namespace My2Cents.API.Controllers
             var newUserProfileInfo = await _repository.PostNewUserInfo(userProfile);
 
             return newUserProfileInfo;
+        }
+
+        [HttpPut("Update")]
+        public async Task<UserProfile> PutUserInfo(UserProfileDto profile)
+        {
+            UserProfile userProfile = new()
+            {
+                FirstName = profile.FirstName,
+                LastName = profile.LastName,
+                SecondaryEmail = profile.SecondaryEmail,
+                MailingAddress = profile.MailingAddress,
+                Phone = profile.Phone,
+                City = profile.City,
+                State = profile.State,
+                Employer = profile.Employer,
+                WorkAddress = profile.WorkAddress,
+                WorkPhone = profile.WorkPhone
+            };
+
+            var newUserProfileInfo = await _repository.PostNewUserInfo(userProfile);
         }
     }
 }
