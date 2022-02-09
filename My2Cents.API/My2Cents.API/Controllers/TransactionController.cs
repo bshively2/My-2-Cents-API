@@ -15,5 +15,11 @@ namespace My2Cents.API.Controllers
         {
             _repository = repository;
         }
+
+        [HttpPost]
+        public async Task<int> PostTransactionsAsync([FromBody] Transfer_Dto Record)
+        {
+            return await _repository.PostTransactionsAsync(Record.From, Record.To, Record.Amount);
+        }
     }
 }
