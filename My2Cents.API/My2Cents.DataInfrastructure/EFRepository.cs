@@ -74,7 +74,6 @@ namespace My2Cents.DataInfrastructure
                           select new AccountListDto
                           {
                               AccountID = ic.AccountId,
-                              UserID = ic.UserId,
                               TotalBalance = ic.TotalBalance,
                               AccountType = io.AccountType1,
                               Interest = ic.Interest
