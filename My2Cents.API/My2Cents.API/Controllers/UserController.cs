@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using My2Cents.API.Models;
 using My2Cents.DataInfrastructure;
+using My2Cents.DataInfrastructure.Models;
 
 namespace My2Cents.API.Controllers
 {
@@ -16,11 +16,51 @@ namespace My2Cents.API.Controllers
             _repository = repository;
         }
 
-        [Route("Info")]
-        [HttpGet]
-        public async Task<IEnumerable<UserProfile_Dto>> GetUserInfo(int UserId)
+        [HttpGet("Info")]
+        public async Task<ActionResult<IEnumerable<UserProfileDto>>> GetUserInfo(int UserId)
         {
-            return await _repository.GetUserInfo(UserId);
+            var userProfileInfo = await _repository.GetUserInfo(UserId);
+
+            if (userProfileInfo.Value == null)
+            {
+                return BadRequest();
+            }
+            else if (userProfileInfo.Value.Count() < 1)
+            {
+                return NoContent();
+            }    
+
+            return userProfileInfo;
+        }
+
+        [HttpPost("NewUser")]
+        public async Task<UserProfile> PostNewUserInfo(UserProfileDto profile)
+        {
+            UserProfile userProfile = new()
+            {
+                UserId = profile.UserId,
+                FirstName = profile.FirstName,
+                LastName = profile.LastName,
+                SecondaryEmail = profile.SecondaryEmail,
+                MailingAddress = profile.MailingAddress,
+                Phone = profile.Phone,
+                City = profile.City,
+                State = profile.State,
+                Employer = profile.Employer,
+                WorkAddress = profile.WorkAddress,
+                WorkPhone = profile.WorkPhone
+            };
+            var newUserProfileInfo = await _repository.PostNewUserInfo(userProfile);
+
+            return newUserProfileInfo;
+        }
+
+        [HttpPut("Update")]
+        public async Task<UserProfile> PutUserInfo(int UserId, UserProfileDto profile)
+        {
+            var updateUserProfileInfo = await _repository.PutUserInfo(UserId, profile);
+
+            return updateUserProfileInfo;
         }
     }
 }
