@@ -9,6 +9,7 @@ namespace My2Cents.DataInfrastructure
 {
     public interface IRepository
     {
-        Task<ActionResult<UserProfile>> GetUserInfo(int userId);
+        Task<UserProfile> GetUserInfo(int userId);
+        Task<UserProfile> PostNewUserInfo(UserProfile profile);
     }
 }

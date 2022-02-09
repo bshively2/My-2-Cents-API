@@ -16,7 +16,7 @@ namespace My2Cents.DataInfrastructure
             _logger = logger;
         }
 
-        public async Task<ActionResult<UserProfile>> GetUserInfo(int UserId)
+        public async Task<UserProfile> GetUserInfo(int UserId)
         {
             _logger.LogInformation($"GetUserInfo {UserId}", UserId);
 
@@ -27,7 +27,18 @@ namespace My2Cents.DataInfrastructure
                 .FirstOrDefaultAsync();
 
             return userProfileInfo!;
+        }
 
+        public async Task<UserProfile> PostNewUserInfo(UserProfile profile)
+        {
+            _context.UserProfiles.Add(profile);
+            await _context.SaveChangesAsync();
+
+            var newUserProfileInfo = await _context.UserProfiles
+                .Where(u => u.UserId == profile.UserId)
+                .FirstOrDefaultAsync();
+
+            return newUserProfileInfo!;
         }
     }
 }
