@@ -35,7 +35,7 @@ namespace My2Cents.API.Controllers
         }
 
         [HttpPost("NewUser")]
-        public async Task<UserProfile> PostNewUserInfo(UserProfileDto profile)
+        public async Task<UserProfile> PostNewUserInfo([FromBody, Required] UserProfileDto profile)
         {
             UserProfile userProfile = new()
             {
@@ -57,9 +57,9 @@ namespace My2Cents.API.Controllers
         }
 
         [HttpPut("Update")]
-        public async Task<UserProfile> PutUserInfo([Required] int UserId, UserProfileDto profile)
+        public async Task<UserProfile> PutUserInfo([FromBody, Required] UserProfileDto profile)
         {
-            var updateUserProfileInfo = await _repository.PutUserInfo(UserId, profile);
+            var updateUserProfileInfo = await _repository.PutUserInfo(profile);
 
             return updateUserProfileInfo;
         }

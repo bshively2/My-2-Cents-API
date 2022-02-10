@@ -12,7 +12,7 @@ namespace My2Cents.DataInfrastructure
     {
         Task<ActionResult<IEnumerable<UserProfileDto>>> GetUserInfo(int userId);
         Task<UserProfile> PostNewUserInfo(UserProfile profile);
-        Task<UserProfile> PutUserInfo(int UserId, UserProfileDto profile);
+        Task<UserProfile> PutUserInfo(UserProfileDto profile);
         Task<ActionResult<IEnumerable<AccountListDto>>> GetUserAccounts(int userId);
     }
 }

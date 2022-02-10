@@ -49,11 +49,11 @@ namespace My2Cents.DataInfrastructure
             return newUserProfileInfo!;
         }
 
-        public async Task<UserProfile> PutUserInfo(int UserId, UserProfileDto profile)
+        public async Task<UserProfile> PutUserInfo(UserProfileDto profile)
         {
             UserProfile userProfile = new()
             {
-                UserId = UserId,
+                UserId = profile.UserId,
                 FirstName = profile.FirstName,
                 LastName = profile.LastName,
                 SecondaryEmail = profile.SecondaryEmail,
@@ -70,7 +70,7 @@ namespace My2Cents.DataInfrastructure
             await _context.SaveChangesAsync();
 
             var updateUserProfileInfo = await _context.UserProfiles
-                .Where(u => u.UserId == UserId)
+                .Where(u => u.UserId == profile.UserId)
                 .FirstOrDefaultAsync();
 
             return updateUserProfileInfo!;
