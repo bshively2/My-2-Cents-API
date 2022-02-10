@@ -14,5 +14,7 @@ namespace My2Cents.DataInfrastructure
         Task<UserProfile> PostNewUserInfo(UserProfile profile);
         Task<UserProfile> PutUserInfo(int UserId, UserProfileDto profile);
         Task<ActionResult<IEnumerable<AccountListDto>>> GetUserAccounts(int userId);
+
+        Task<int> PostTransactionsAsync(int from, int to, decimal amount);
     }
 }
