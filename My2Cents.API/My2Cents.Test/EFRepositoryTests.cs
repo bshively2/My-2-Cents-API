@@ -23,10 +23,24 @@ namespace My2Cents.Test
             var accountId = 2;
 
             var transactionDto = new List<TransactionDto>();
-            transactionDto.Add(new(1, accountId, 306, "Bagels", DateTime.Now, "Yes", 306, "Checking", 10010));
+      TransactionDto T = new TransactionDto();
+      transactionDto.Add(new TransactionDto());
+      transactionDto[0].AccountId = 1;
+      transactionDto[0].Amount = 306;
+      transactionDto[0].TransactionDate = DateTime.Now;
+      transactionDto[0].Authorized = "Yes";
+      transactionDto[0].LineAmount = 10010;
+      transactionDto[0].AccountType = "Checking";
+      transactionDto[0].TotalBalance = 10010;
+
+      //transactionDto.Add(new(1, accountId, 306, "Bagels", DateTime.Now, "Yes", 306, "Checking", 10010));
 
 
-            _repositoryMock.Setup(x => x.GetTransactions(accountId)).Returns(Task.FromResult((IEnumerable<TransactionDto>)transactionDto));
+
+
+
+
+    _repositoryMock.Setup(x => x.GetTransactions(accountId)).Returns(Task.FromResult((IEnumerable<TransactionDto>)transactionDto));
 
             //Act
             var actual = await _repositoryMock.Object.GetTransactions(accountId);

@@ -8,6 +8,8 @@ namespace My2Cents.DataInfrastructure.Models
 {
   public class TransactionDto
   {
+    public TransactionDto()
+    { }
     public int TransactionId { get; set; }
     public int AccountId { get; set; }
     public decimal Amount { get; set; }
