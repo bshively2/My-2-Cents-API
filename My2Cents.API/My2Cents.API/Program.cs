@@ -24,7 +24,7 @@ builder.Services.AddCors(options =>
     // here you put all the origins that websites making requests to this API via JS are hosted at
     options.AddDefaultPolicy(builder =>
         builder
-            .WithOrigins("https://my2centsui.azurewebsites.net")
+            .WithOrigins("http://localhost:4200","https://my2centsui.azurewebsites.net")
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowCredentials());
