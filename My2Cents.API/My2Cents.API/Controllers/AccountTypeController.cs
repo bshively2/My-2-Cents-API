@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using My2Cents.DataInfrastructure;
 using My2Cents.DataInfrastructure.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace My2Cents.API.Controllers
 {
@@ -17,7 +18,7 @@ namespace My2Cents.API.Controllers
         }
 
         [HttpGet("Accounts")]
-        public async Task<ActionResult<IEnumerable<AccountListDto>>> GetUserAccounts(int UserId)
+        public async Task<ActionResult<IEnumerable<AccountListDto>>> GetUserAccounts([Required] int UserId)
         {
             var userAccountList = await _repository.GetUserAccounts(UserId);
 

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using My2Cents.DataInfrastructure;
 using My2Cents.DataInfrastructure.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace My2Cents.API.Controllers
 {
@@ -17,7 +18,7 @@ namespace My2Cents.API.Controllers
         }
 
         [HttpGet("Info")]
-        public async Task<ActionResult<IEnumerable<UserProfileDto>>> GetUserInfo(int UserId)
+        public async Task<ActionResult<IEnumerable<UserProfileDto>>> GetUserInfo([Required] int UserId)
         {
             var userProfileInfo = await _repository.GetUserInfo(UserId);
 
@@ -34,7 +35,7 @@ namespace My2Cents.API.Controllers
         }
 
         [HttpPost("NewUser")]
-        public async Task<UserProfile> PostNewUserInfo(UserProfileDto profile)
+        public async Task<UserProfile> PostNewUserInfo([FromBody, Required] UserProfileDto profile)
         {
             UserProfile userProfile = new()
             {
@@ -56,9 +57,9 @@ namespace My2Cents.API.Controllers
         }
 
         [HttpPut("Update")]
-        public async Task<UserProfile> PutUserInfo(int UserId, UserProfileDto profile)
+        public async Task<UserProfile> PutUserInfo([FromBody, Required] UserProfileDto profile)
         {
-            var updateUserProfileInfo = await _repository.PutUserInfo(UserId, profile);
+            var updateUserProfileInfo = await _repository.PutUserInfo(profile);
 
             return updateUserProfileInfo;
         }

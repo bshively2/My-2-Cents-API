@@ -74,16 +74,13 @@ namespace My2Cents.DataInfrastructure
 
         public async Task<ActionResult<IEnumerable<UserProfileDto>>> GetUserInfo(int UserId)
         {
-            return await (from io in _context.UserLogins
-                          join ic in _context.UserProfiles
-                          on io.UserId equals ic.UserId
+            return await (from ic in _context.UserProfiles
                           where ic.UserId == UserId
                           select new UserProfileDto
                           {
-                              UserId = ic.UserId,
+                              UserId = UserId,
                               FirstName = ic.FirstName,
                               LastName = ic.LastName,
-                              Email = io.Email,
                               SecondaryEmail = ic.SecondaryEmail,
                               MailingAddress = ic.MailingAddress,
                               Phone = ic.Phone,
@@ -107,11 +104,11 @@ namespace My2Cents.DataInfrastructure
             return newUserProfileInfo!;
         }
 
-        public async Task<UserProfile> PutUserInfo(int UserId, UserProfileDto profile)
+        public async Task<UserProfile> PutUserInfo(UserProfileDto profile)
         {
             UserProfile userProfile = new()
             {
-                UserId = UserId,
+                UserId = profile.UserId,
                 FirstName = profile.FirstName,
                 LastName = profile.LastName,
                 SecondaryEmail = profile.SecondaryEmail,
@@ -128,7 +125,7 @@ namespace My2Cents.DataInfrastructure
             await _context.SaveChangesAsync();
 
             var updateUserProfileInfo = await _context.UserProfiles
-                .Where(u => u.UserId == UserId)
+                .Where(u => u.UserId == profile.UserId)
                 .FirstOrDefaultAsync();
 
             return updateUserProfileInfo!;
