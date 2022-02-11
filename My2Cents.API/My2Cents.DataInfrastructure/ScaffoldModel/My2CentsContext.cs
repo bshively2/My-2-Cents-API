@@ -102,9 +102,9 @@ namespace My2Cents.DataInfrastructure
 
                 entity.Property(e => e.Email).HasMaxLength(255);
 
-                entity.Property(e => e.EmailVerified)
-                    .HasMaxLength(10)
-                    .HasColumnName("Email_Verified");
+                //entity.Property(e => e.EmailVerified)
+                //    .HasMaxLength(10)
+                //    .HasColumnName("Email_Verified");
 
                 entity.Property(e => e.Password).HasMaxLength(255);
 

@@ -152,16 +152,6 @@ namespace My2Cents.DataInfrastructure
 
       private readonly string _connectionString;
 
-
-    private readonly My2CentsContext _context;
-    private readonly ILogger<EfRepository> _logger;
-
-    public EfRepository(My2CentsContext context, ILogger<EfRepository> logger)
-    {
-      _context = context;
-      _logger = logger;
-    }
-
     public async Task<IEnumerable<TransactionDto>> GetTransactions(int AccountId)
     {
 
