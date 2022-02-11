@@ -66,6 +66,8 @@ namespace My2Cents.DataInfrastructure
         public async Task<ActionResult<IEnumerable<UserProfileDto>>> GetUserInfo(int UserId)
         {
             return await (from ic in _context.UserProfiles
+                          join io in _context.UserLogins
+                          on ic.UserId equals io.UserId
                           where ic.UserId == UserId
                           select new UserProfileDto
                           {
@@ -79,20 +81,28 @@ namespace My2Cents.DataInfrastructure
                               State = ic.State,
                               Employer = ic.Employer,
                               WorkAddress = ic.WorkAddress,
-                              WorkPhone = ic.WorkPhone
+                              WorkPhone = ic.WorkPhone,
+                              Email = io.Email
                           }).ToListAsync();
         }
 
-        public async Task<UserProfile> PostNewUserInfo(UserProfile profile)
+        public async Task<int> PostNewUserInfo(UserProfile profile)
         {
             await _context.UserProfiles.AddAsync(profile);
-            await _context.SaveChangesAsync();
 
             var newUserProfileInfo = await _context.UserProfiles
                 .Where(u => u.UserId == profile.UserId)
                 .FirstOrDefaultAsync();
 
-            return newUserProfileInfo!;
+            if (newUserProfileInfo != null)
+            {
+                return await _context.SaveChangesAsync();
+            }
+            else
+            {
+                return 0;
+            }
+            
         }
 
         public async Task<UserProfile> PutUserInfo(UserProfileDto profile)
