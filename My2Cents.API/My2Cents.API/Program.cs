@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-string connectionString = builder.Configuration.GetConnectionString("connectionString");
+string connectionString = builder.Configuration.GetConnectionString("My2centsDB");
 
 
 builder.Services.AddControllers();
@@ -13,11 +13,14 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<My2CentsContext>(options =>
 {
+
     // logging to console is on by default
     options.UseSqlServer(connectionString);
+
 });
 
 builder.Services.AddScoped<IRepository, EfRepository>();
+
 
 builder.Services.AddCors(options =>
 {
@@ -36,6 +39,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
 }
 
 app.UseHttpsRedirection();
@@ -45,5 +49,6 @@ app.UseCors();
 app.UseAuthorization();
 
 app.MapControllers();
+
 
 app.Run();

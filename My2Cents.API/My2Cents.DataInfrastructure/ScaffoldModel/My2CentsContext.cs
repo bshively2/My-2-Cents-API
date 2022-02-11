@@ -41,6 +41,7 @@ namespace My2Cents.DataInfrastructure
                 entity.HasOne(d => d.AccountType)
                     .WithMany(p => p.Accounts)
                     .HasForeignKey(d => d.AccountTypeId)
+
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("ACC_FK_AccTypeID");
 
@@ -101,6 +102,10 @@ namespace My2Cents.DataInfrastructure
 
                 entity.Property(e => e.Email).HasMaxLength(255);
 
+                entity.Property(e => e.EmailVerified)
+                    .HasMaxLength(10)
+                    .HasColumnName("Email_Verified");
+
                 entity.Property(e => e.Password).HasMaxLength(255);
 
                 entity.Property(e => e.UserName).HasMaxLength(255);
@@ -127,7 +132,8 @@ namespace My2Cents.DataInfrastructure
 
                 entity.Property(e => e.MailingAddress).HasMaxLength(250);
 
-                entity.Property(e => e.Phone).HasMaxLength(10);
+                entity.Property(e => e.Phone).HasMaxLength(36);
+
 
                 entity.Property(e => e.SecondaryEmail).HasMaxLength(250);
 
@@ -135,7 +141,9 @@ namespace My2Cents.DataInfrastructure
 
                 entity.Property(e => e.WorkAddress).HasMaxLength(250);
 
-                entity.Property(e => e.WorkPhone).HasMaxLength(10);
+
+                entity.Property(e => e.WorkPhone).HasMaxLength(36);
+
 
                 entity.HasOne(d => d.User)
                     .WithOne(p => p.UserProfile)

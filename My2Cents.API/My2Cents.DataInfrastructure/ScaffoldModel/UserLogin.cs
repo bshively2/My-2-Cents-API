@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections.Generic;
 
@@ -13,3 +14,5 @@ namespace My2Cents.DataInfrastructure
         public virtual UserProfile UserProfile { get; set; } = null!;
     }
 }
+
+
