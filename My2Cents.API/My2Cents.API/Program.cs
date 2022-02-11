@@ -13,18 +13,21 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<My2CentsContext>(options =>
 {
+
     // logging to console is on by default
     options.UseSqlServer(connectionString);
+
 });
 
 builder.Services.AddScoped<IRepository, EfRepository>();
+
 
 builder.Services.AddCors(options =>
 {
     // here you put all the origins that websites making requests to this API via JS are hosted at
     options.AddDefaultPolicy(builder =>
         builder
-            .WithOrigins("https://my2centsui.azurewebsites.net")
+            .WithOrigins("http://localhost:4200","https://my2centsui.azurewebsites.net")
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowCredentials());
@@ -36,6 +39,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
 }
 
 app.UseHttpsRedirection();
@@ -45,5 +49,6 @@ app.UseCors();
 app.UseAuthorization();
 
 app.MapControllers();
+
 
 app.Run();
