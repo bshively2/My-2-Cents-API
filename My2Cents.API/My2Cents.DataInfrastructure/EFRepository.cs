@@ -95,12 +95,38 @@ namespace My2Cents.DataInfrastructure
                           }).ToListAsync();
         }
 
-        public async Task<int> PostNewUserInfo(UserProfile profile)
+        public async Task<int> PostNewUserInfo(int UserId,
+            string FirstName,
+            string LastName,
+            string SecondaryEmail,
+            string MailingAddress,
+            string Phone,
+            string City,
+            string State,
+            string Employer,
+            string WorkAddress,
+            string WorkPhone
+            )
         {
-            await _context.UserProfiles.AddAsync(profile);
+            var userProfile = new UserProfile()
+            {
+                UserId = UserId,
+                FirstName = FirstName,
+                LastName = LastName,
+                SecondaryEmail = SecondaryEmail,
+                MailingAddress = MailingAddress,
+                Phone = Phone,
+                City = City,
+                State = State,
+                Employer = Employer,
+                WorkAddress = WorkAddress,
+                WorkPhone = WorkPhone
+            };
+
+            await _context.UserProfiles.AddAsync(userProfile);
 
             var newUserProfileInfo = await _context.UserProfiles
-                .Where(u => u.UserId == profile.UserId)
+                .Where(u => u.UserId == userProfile.UserId)
                 .FirstOrDefaultAsync();
 
             if (newUserProfileInfo != null)
@@ -180,12 +206,6 @@ namespace My2Cents.DataInfrastructure
                       AccountType=at.AccountType1,
                       TotalBalance= ac.TotalBalance
                     }).ToListAsync();
-
-
-    
-
-
-    _logger.LogInformation("function GetTransaction Account Id {int AccountId}", AccountId);
     }
 
 

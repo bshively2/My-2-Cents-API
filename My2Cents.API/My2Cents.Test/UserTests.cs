@@ -43,14 +43,24 @@ namespace My2Cents.Test
             };
 
             Mock<IRepository> _repository = new Mock<IRepository>();
-            _repository.Setup(u => u.PostNewUserInfo(profile)).ReturnsAsync(profile);
+            _repository.Setup(u => u.PostNewUserInfo(userId,
+                firstName,
+                lastName,
+                secondaryEmail,
+                mailingAddress,
+                phone,
+                city,
+                state,
+                employer,
+                workAddress,
+                workPhone)).ReturnsAsync(0);
             UserController userController = new(_repository.Object);
 
             // act
             var result = await userController.PostNewUserInfo(profileDto);
 
             // assert
-            Assert.Equal(profile, result);
+            Assert.Equal(0, result);
         }
     }
 }
