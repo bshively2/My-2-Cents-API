@@ -31,5 +31,7 @@ namespace My2Cents.DataInfrastructure.Models
         public string WorkAddress { get; set; } = null!;
         [Phone]
         public string WorkPhone { get; set; } = null!;
+        [EmailAddress]
+        public string Email { get; set; } = null!;
     }
 }
