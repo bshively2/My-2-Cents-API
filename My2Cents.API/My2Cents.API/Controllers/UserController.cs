@@ -38,7 +38,8 @@ namespace My2Cents.API.Controllers
         public async Task<int> PostNewUserInfo([FromBody, Required] UserProfileDto profile)
         {
             
-            return await _repository.PostNewUserInfo(profile.UserId,
+            return await _repository.PostNewUserInfo(
+                profile.UserId,
                 profile.FirstName,
                 profile.LastName,
                 profile.SecondaryEmail,
@@ -53,11 +54,21 @@ namespace My2Cents.API.Controllers
         }
 
         [HttpPut("Update")]
-        public async Task<UserProfile> PutUserInfo([FromBody, Required] UserProfileDto profile)
+        public async Task<int> PutUserInfo([FromBody, Required] UserProfileDto profile)
         {
-            var updateUserProfileInfo = await _repository.PutUserInfo(profile);
-
-            return updateUserProfileInfo;
+            return await _repository.PutUserInfo(
+                profile.UserId,
+                profile.FirstName,
+                profile.LastName,
+                profile.SecondaryEmail,
+                profile.MailingAddress,
+                profile.Phone,
+                profile.City,
+                profile.State,
+                profile.Employer,
+                profile.WorkAddress,
+                profile.WorkPhone
+                );
         }
     }
 }

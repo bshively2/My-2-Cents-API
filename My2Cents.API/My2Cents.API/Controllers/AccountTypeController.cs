@@ -33,5 +33,16 @@ namespace My2Cents.API.Controllers
 
             return userAccountList;
         }
+
+        [HttpPost("NewAccount")]
+        public async Task<int> PostUserAccount([FromBody, Required] AccountDto newAccount)
+        {
+            return await _repository.PostUserAccount(
+                newAccount.UserId,
+                newAccount.TotalBalance,
+                newAccount.AccountTypeId,
+                newAccount.Interest
+                );
+        }
     }
 }
