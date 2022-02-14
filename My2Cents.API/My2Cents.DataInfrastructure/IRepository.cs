@@ -25,9 +25,22 @@ namespace My2Cents.DataInfrastructure
             string WorkAddress,
             string WorkPhone
             );
-        Task<UserProfile> PutUserInfo(UserProfileDto profile);
+        Task<int> PutUserInfo(
+            int UserId,
+            string FirstName,
+            string LastName,
+            string SecondaryEmail,
+            string MailingAddress,
+            string Phone,
+            string City,
+            string State,
+            string Employer,
+            string WorkAddress,
+            string WorkPhone
+            );
         Task<ActionResult<IEnumerable<AccountListDto>>> GetUserAccounts(int userId);
         Task<IEnumerable<TransactionDto>> GetTransactions(int AccountId);
+        Task<int> PostUserAccount(int userId, decimal totalBalance, int accountTypeId, decimal interest);
         Task<int> PostTransactionsAsync(int from, int to, decimal amount);
     }
 

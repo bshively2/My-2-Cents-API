@@ -95,7 +95,8 @@ namespace My2Cents.DataInfrastructure
                           }).ToListAsync();
         }
 
-        public async Task<int> PostNewUserInfo(int UserId,
+        public async Task<int> PostNewUserInfo(
+            int UserId,
             string FirstName,
             string LastName,
             string SecondaryEmail,
@@ -124,47 +125,59 @@ namespace My2Cents.DataInfrastructure
             };
 
             await _context.UserProfiles.AddAsync(userProfile);
-
-            var newUserProfileInfo = await _context.UserProfiles
-                .Where(u => u.UserId == userProfile.UserId)
-                .FirstOrDefaultAsync();
-
-            if (newUserProfileInfo != null)
-            {
-                return await _context.SaveChangesAsync();
-            }
-            else
-            {
-                return 0;
-            }
-            
+            return await _context.SaveChangesAsync();
         }
 
-        public async Task<UserProfile> PutUserInfo(UserProfileDto profile)
+        public async Task<int> PutUserInfo(
+            int UserId,
+            string FirstName,
+            string LastName,
+            string SecondaryEmail,
+            string MailingAddress,
+            string Phone,
+            string City,
+            string State,
+            string Employer,
+            string WorkAddress,
+            string WorkPhone
+            )
         {
             UserProfile userProfile = new()
             {
-                UserId = profile.UserId,
-                FirstName = profile.FirstName,
-                LastName = profile.LastName,
-                SecondaryEmail = profile.SecondaryEmail,
-                MailingAddress = profile.MailingAddress,
-                Phone = profile.Phone,
-                City = profile.City,
-                State = profile.State,
-                Employer = profile.Employer,
-                WorkAddress = profile.WorkAddress,
-                WorkPhone = profile.WorkPhone
+                UserId = UserId,
+                FirstName = FirstName,
+                LastName = LastName,
+                SecondaryEmail = SecondaryEmail,
+                MailingAddress = MailingAddress,
+                Phone = Phone,
+                City = City,
+                State = State,
+                Employer = Employer,
+                WorkAddress = WorkAddress,
+                WorkPhone = WorkPhone
             };
 
             _context.UserProfiles.Update(userProfile);
-            await _context.SaveChangesAsync();
+            return await _context.SaveChangesAsync();
+        }
 
-            var updateUserProfileInfo = await _context.UserProfiles
-                .Where(u => u.UserId == profile.UserId)
-                .FirstOrDefaultAsync();
+        public async Task<int> PostUserAccount(int userId, decimal totalBalance, int accountTypeId, decimal interest)
+        {
+            Account account = new()
+            {
+                UserId = userId,
+                TotalBalance = totalBalance,
+                AccountTypeId = accountTypeId,
+                Interest = interest
+            };
 
-            return updateUserProfileInfo!;
+            if (totalBalance < 0)
+            {
+                return 0;
+            }
+
+            _context.Accounts.Update(account);
+            return await _context.SaveChangesAsync();
         }
 
         public async Task<ActionResult<IEnumerable<AccountListDto>>> GetUserAccounts(int userId)
@@ -182,8 +195,6 @@ namespace My2Cents.DataInfrastructure
                               Interest = ic.Interest
                           }).ToListAsync();
         }
-
-      private readonly string _connectionString;
 
     public async Task<IEnumerable<TransactionDto>> GetTransactions(int AccountId)
     {
@@ -206,14 +217,6 @@ namespace My2Cents.DataInfrastructure
                       AccountType=at.AccountType1,
                       TotalBalance= ac.TotalBalance
                     }).ToListAsync();
-    }
-
-
-
-    public EfRepository(string connectionString)
-    {
-        _connectionString = connectionString ?? throw new ArgumentNullException(nameof(connectionString));
-
     }
   }
 }
