@@ -125,19 +125,7 @@ namespace My2Cents.DataInfrastructure
             };
 
             await _context.UserProfiles.AddAsync(userProfile);
-
-            var newUserProfileInfo = await _context.UserProfiles
-                .Where(u => u.UserId == userProfile.UserId)
-                .FirstOrDefaultAsync();
-
-            if (newUserProfileInfo != null)
-            {
-                return await _context.SaveChangesAsync();
-            }
-            else
-            {
-                return 0;
-            }
+            return await _context.SaveChangesAsync();
         }
 
         public async Task<int> PutUserInfo(
@@ -170,19 +158,7 @@ namespace My2Cents.DataInfrastructure
             };
 
             _context.UserProfiles.Update(userProfile);
-
-            var updateUserProfileInfo = await _context.UserProfiles
-                .Where(u => u.UserId == UserId)
-                .FirstOrDefaultAsync();
-
-            if (updateUserProfileInfo != null)
-            {
-                return await _context.SaveChangesAsync();
-            }
-            else
-            {
-                return 0;
-            }
+            return await _context.SaveChangesAsync();
         }
 
         public async Task<int> PostUserAccount(int userId, decimal totalBalance, int accountTypeId, decimal interest)

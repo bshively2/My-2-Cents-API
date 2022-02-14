@@ -35,7 +35,7 @@ namespace My2Cents.API.Controllers
         }
 
         [HttpPost("NewUser")]
-        public async Task<int> PostNewUserInfo([FromBody, Required] UserProfileDto profile)
+        public async Task<int> PostNewUserInfo([FromBody, Required] PostNewUserDto profile)
         {
             
             return await _repository.PostNewUserInfo(

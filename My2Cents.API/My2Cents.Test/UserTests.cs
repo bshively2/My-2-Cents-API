@@ -62,7 +62,7 @@ namespace My2Cents.Test
             string workPhone)
         {
             // arrange
-            UserProfileDto profileDto = new()
+            PostNewUserDto profileDto = new()
             {
                 UserId = userId,
                 FirstName = firstName,
@@ -114,7 +114,7 @@ namespace My2Cents.Test
             string workPhone)
         {
             // arrange
-            UserProfileDto profileDto = new()
+            PostNewUserDto profileDto = new()
             {
                 UserId = userId,
                 FirstName = firstName,
