@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CoverageSession>
-  <Summary numSequencePoints="472" visitedSequencePoints="90" numBranchPoints="24" visitedBranchPoints="4" sequenceCoverage="19.06" branchCoverage="16.66" maxCyclomaticComplexity="100" minCyclomaticComplexity="0" visitedClasses="11" numClasses="29" visitedMethods="33" numMethods="103" />
+  <Summary numSequencePoints="490" visitedSequencePoints="106" numBranchPoints="24" visitedBranchPoints="4" sequenceCoverage="21.63" branchCoverage="16.66" maxCyclomaticComplexity="100" minCyclomaticComplexity="0" visitedClasses="14" numClasses="31" visitedMethods="39" numMethods="104" />
   <Modules>
-    <Module hash="F6231E1E-9D9F-4236-B7E8-841BEAB9C626">
+    <Module hash="3CFDA695-0C8B-451F-B1C8-99D387AC449E">
       <ModulePath>My2Cents.API.dll</ModulePath>
-      <ModuleTime>2022-02-13T10:16:30</ModuleTime>
+      <ModuleTime>2022-02-14T12:59:15</ModuleTime>
       <ModuleName>My2Cents.API</ModuleName>
       <Files>
         <File uid="1" fullPath="C:\Users\melin\OneDrive\Desktop\RevGit\My_2_Cents\My-2-Cents-API\My2Cents.API\My2Cents.API\Program.cs" />
@@ -68,22 +68,22 @@
           </Methods>
         </Class>
         <Class>
-          <Summary numSequencePoints="4" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="1" visitedMethods="0" numMethods="1" />
+          <Summary numSequencePoints="4" visitedSequencePoints="4" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
           <FullName>My2Cents.API.Controllers.AccountTypeController</FullName>
           <Methods>
-            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="0" branchCoverage="100" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
-              <Summary numSequencePoints="4" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="4" visitedSequencePoints="4" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
               <MetadataToken />
               <Name>System.Void My2Cents.API.Controllers.AccountTypeController::.ctor(My2Cents.DataInfrastructure.IRepository)</Name>
               <FileRef uid="2" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="15" ordinal="0" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="0" uspid="16" ordinal="1" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="0" uspid="17" ordinal="2" sl="17" sc="1" el="17" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="0" uspid="18" ordinal="3" sl="18" sc="1" el="18" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="2" uspid="15" ordinal="0" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="2" uspid="16" ordinal="1" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="2" uspid="17" ordinal="2" sl="17" sc="1" el="17" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="2" uspid="18" ordinal="3" sl="18" sc="1" el="18" ec="2" bec="0" bev="0" fileid="2" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="15" ec="1" el="18" bec="0" bev="0" fileid="2" xmlns:p8="xsi" />
+              <MethodPoint vc="4" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="15" ec="1" el="18" bec="0" bev="0" fileid="2" xmlns:p8="xsi" />
             </Method>
           </Methods>
         </Class>
@@ -115,6 +115,30 @@
                 <BranchPoint vc="0" uspid="29" ordinal="3" path="1" offset="214" offsetend="236" sl="29" fileid="2" />
               </BranchPoints>
               <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="22" ec="1" el="35" bec="0" bev="0" fileid="2" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="8" visitedSequencePoints="8" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>My2Cents.API.Controllers.AccountTypeController/&lt;PostUserAccount&gt;d__3</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="8" visitedSequencePoints="8" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void My2Cents.API.Controllers.AccountTypeController/&lt;PostUserAccount&gt;d__3::MoveNext()</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="39" ordinal="0" sl="39" sc="1" el="39" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="2" uspid="40" ordinal="1" sl="40" sc="1" el="40" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="2" uspid="41" ordinal="2" sl="41" sc="1" el="41" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="2" uspid="42" ordinal="3" sl="42" sc="1" el="42" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="2" uspid="43" ordinal="4" sl="43" sc="1" el="43" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="2" uspid="44" ordinal="5" sl="44" sc="1" el="44" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="2" uspid="45" ordinal="6" sl="45" sc="1" el="45" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="2" uspid="46" ordinal="7" sl="46" sc="1" el="46" ec="2" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="8" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="39" ec="1" el="46" bec="0" bev="0" fileid="2" xmlns:p8="xsi" />
             </Method>
           </Methods>
         </Class>
@@ -319,9 +343,9 @@
         </Class>
       </Classes>
     </Module>
-    <Module hash="2FC42781-CADD-47FB-B5DF-D95E72907355">
+    <Module hash="4CFAC55F-331F-46F7-B335-F9EB7B84EB60">
       <ModulePath>My2Cents.DataInfrastructure.dll</ModulePath>
-      <ModuleTime>2022-02-13T10:16:30</ModuleTime>
+      <ModuleTime>2022-02-14T12:59:15</ModuleTime>
       <ModuleName>My2Cents.DataInfrastructure</ModuleName>
       <Files>
         <File uid="6" fullPath="C:\Users\melin\OneDrive\Desktop\RevGit\My_2_Cents\My-2-Cents-API\My2Cents.API\My2Cents.DataInfrastructure\EFRepository.cs" />
@@ -339,7 +363,7 @@
       </Files>
       <Classes>
         <Class>
-          <Summary numSequencePoints="9" visitedSequencePoints="0" numBranchPoints="2" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="2" minCyclomaticComplexity="1" visitedClasses="0" numClasses="1" visitedMethods="0" numMethods="2" />
+          <Summary numSequencePoints="5" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="1" visitedMethods="0" numMethods="1" />
           <FullName>My2Cents.DataInfrastructure.EfRepository</FullName>
           <Methods>
             <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="0" branchCoverage="100" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
@@ -357,23 +381,6 @@
               <BranchPoints />
               <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="23" ec="1" el="27" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
             </Method>
-            <Method cyclomaticComplexity="2" nPathComplexity="2" sequenceCoverage="0" branchCoverage="0" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
-              <Summary numSequencePoints="4" visitedSequencePoints="0" numBranchPoints="2" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
-              <MetadataToken />
-              <Name>System.Void My2Cents.DataInfrastructure.EfRepository::.ctor(System.String)</Name>
-              <FileRef uid="6" />
-              <SequencePoints>
-                <SequencePoint vc="0" uspid="231" ordinal="0" sl="231" sc="1" el="231" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="232" ordinal="1" sl="232" sc="1" el="232" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="233" ordinal="2" sl="233" sc="1" el="233" ec="2" bec="2" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="235" ordinal="3" sl="235" sc="1" el="235" ec="2" bec="0" bev="0" fileid="6" />
-              </SequencePoints>
-              <BranchPoints>
-                <BranchPoint vc="0" uspid="233" ordinal="0" path="0" offset="11" offsetend="13" sl="233" fileid="6" />
-                <BranchPoint vc="0" uspid="233" ordinal="1" path="1" offset="11" offsetend="25" sl="233" fileid="6" />
-              </BranchPoints>
-              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="231" ec="1" el="235" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
-            </Method>
           </Methods>
         </Class>
         <Class>
@@ -386,58 +393,58 @@
               <Name>System.Void My2Cents.DataInfrastructure.EfRepository/&lt;GetTransactions&gt;d__9::MoveNext()</Name>
               <FileRef uid="6" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="207" ordinal="0" sl="207" sc="1" el="207" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="209" ordinal="1" sl="209" sc="1" el="209" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="210" ordinal="2" sl="210" sc="1" el="210" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="211" ordinal="3" sl="211" sc="1" el="211" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="212" ordinal="4" sl="212" sc="1" el="212" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="213" ordinal="5" sl="213" sc="1" el="213" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="214" ordinal="6" sl="214" sc="1" el="214" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="215" ordinal="7" sl="215" sc="1" el="215" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="216" ordinal="8" sl="216" sc="1" el="216" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="217" ordinal="9" sl="217" sc="1" el="217" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="218" ordinal="10" sl="218" sc="1" el="218" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="219" ordinal="11" sl="219" sc="1" el="219" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="220" ordinal="12" sl="220" sc="1" el="220" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="221" ordinal="13" sl="221" sc="1" el="221" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="222" ordinal="14" sl="222" sc="1" el="222" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="223" ordinal="15" sl="223" sc="1" el="223" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="224" ordinal="16" sl="224" sc="1" el="224" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="225" ordinal="17" sl="225" sc="1" el="225" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="226" ordinal="18" sl="226" sc="1" el="226" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="227" ordinal="19" sl="227" sc="1" el="227" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="224" ordinal="0" sl="224" sc="1" el="224" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="226" ordinal="1" sl="226" sc="1" el="226" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="227" ordinal="2" sl="227" sc="1" el="227" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="228" ordinal="3" sl="228" sc="1" el="228" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="229" ordinal="4" sl="229" sc="1" el="229" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="230" ordinal="5" sl="230" sc="1" el="230" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="231" ordinal="6" sl="231" sc="1" el="231" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="232" ordinal="7" sl="232" sc="1" el="232" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="233" ordinal="8" sl="233" sc="1" el="233" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="234" ordinal="9" sl="234" sc="1" el="234" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="235" ordinal="10" sl="235" sc="1" el="235" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="236" ordinal="11" sl="236" sc="1" el="236" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="237" ordinal="12" sl="237" sc="1" el="237" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="238" ordinal="13" sl="238" sc="1" el="238" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="239" ordinal="14" sl="239" sc="1" el="239" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="240" ordinal="15" sl="240" sc="1" el="240" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="241" ordinal="16" sl="241" sc="1" el="241" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="242" ordinal="17" sl="242" sc="1" el="242" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="243" ordinal="18" sl="243" sc="1" el="243" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="244" ordinal="19" sl="244" sc="1" el="244" ec="2" bec="0" bev="0" fileid="6" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="207" ec="1" el="227" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="224" ec="1" el="244" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
             </Method>
           </Methods>
         </Class>
         <Class>
           <Summary numSequencePoints="13" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="1" visitedMethods="0" numMethods="1" />
-          <FullName>My2Cents.DataInfrastructure.EfRepository/&lt;GetUserAccounts&gt;d__7</FullName>
+          <FullName>My2Cents.DataInfrastructure.EfRepository/&lt;GetUserAccounts&gt;d__8</FullName>
           <Methods>
             <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
               <Summary numSequencePoints="13" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
               <MetadataToken />
-              <Name>System.Void My2Cents.DataInfrastructure.EfRepository/&lt;GetUserAccounts&gt;d__7::MoveNext()</Name>
+              <Name>System.Void My2Cents.DataInfrastructure.EfRepository/&lt;GetUserAccounts&gt;d__8::MoveNext()</Name>
               <FileRef uid="6" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="189" ordinal="0" sl="189" sc="1" el="189" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="191" ordinal="1" sl="191" sc="1" el="191" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="192" ordinal="2" sl="192" sc="1" el="192" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="193" ordinal="3" sl="193" sc="1" el="193" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="194" ordinal="4" sl="194" sc="1" el="194" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="195" ordinal="5" sl="195" sc="1" el="195" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="196" ordinal="6" sl="196" sc="1" el="196" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="197" ordinal="7" sl="197" sc="1" el="197" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="198" ordinal="8" sl="198" sc="1" el="198" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="199" ordinal="9" sl="199" sc="1" el="199" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="200" ordinal="10" sl="200" sc="1" el="200" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="201" ordinal="11" sl="201" sc="1" el="201" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" uspid="202" ordinal="12" sl="202" sc="1" el="202" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="208" ordinal="0" sl="208" sc="1" el="208" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="210" ordinal="1" sl="210" sc="1" el="210" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="211" ordinal="2" sl="211" sc="1" el="211" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="212" ordinal="3" sl="212" sc="1" el="212" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="213" ordinal="4" sl="213" sc="1" el="213" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="214" ordinal="5" sl="214" sc="1" el="214" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="215" ordinal="6" sl="215" sc="1" el="215" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="216" ordinal="7" sl="216" sc="1" el="216" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="217" ordinal="8" sl="217" sc="1" el="217" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="218" ordinal="9" sl="218" sc="1" el="218" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="219" ordinal="10" sl="219" sc="1" el="219" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="220" ordinal="11" sl="220" sc="1" el="220" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="221" ordinal="12" sl="221" sc="1" el="221" ec="2" bec="0" bev="0" fileid="6" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="189" ec="1" el="202" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="208" ec="1" el="221" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
             </Method>
           </Methods>
         </Class>
@@ -571,6 +578,39 @@
                 <BranchPoint vc="0" uspid="36" ordinal="5" path="1" offset="381" offsetend="1098" sl="36" fileid="6" />
               </BranchPoints>
               <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="31" ec="1" el="71" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="14" visitedSequencePoints="0" numBranchPoints="2" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" visitedClasses="0" numClasses="1" visitedMethods="0" numMethods="1" />
+          <FullName>My2Cents.DataInfrastructure.EfRepository/&lt;PostUserAccount&gt;d__7</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="2" nPathComplexity="2" sequenceCoverage="0" branchCoverage="0" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="14" visitedSequencePoints="0" numBranchPoints="2" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void My2Cents.DataInfrastructure.EfRepository/&lt;PostUserAccount&gt;d__7::MoveNext()</Name>
+              <FileRef uid="6" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="189" ordinal="0" sl="189" sc="1" el="189" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="190" ordinal="1" sl="190" sc="1" el="190" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="191" ordinal="2" sl="191" sc="1" el="191" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="192" ordinal="3" sl="192" sc="1" el="192" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="193" ordinal="4" sl="193" sc="1" el="193" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="194" ordinal="5" sl="194" sc="1" el="194" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="195" ordinal="6" sl="195" sc="1" el="195" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="196" ordinal="7" sl="196" sc="1" el="196" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="198" ordinal="8" sl="198" sc="1" el="198" ec="2" bec="2" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="199" ordinal="9" sl="199" sc="1" el="199" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="200" ordinal="10" sl="200" sc="1" el="200" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="203" ordinal="11" sl="203" sc="1" el="203" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="204" ordinal="12" sl="204" sc="1" el="204" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" uspid="205" ordinal="13" sl="205" sc="1" el="205" ec="2" bec="0" bev="0" fileid="6" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="0" uspid="198" ordinal="0" path="0" offset="99" offsetend="101" sl="198" fileid="6" />
+                <BranchPoint vc="0" uspid="198" ordinal="1" path="1" offset="99" offsetend="109" sl="198" fileid="6" />
+              </BranchPoints>
+              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="189" ec="1" el="205" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
             </Method>
           </Methods>
         </Class>
@@ -1323,7 +1363,7 @@
           </Methods>
         </Class>
         <Class>
-          <Summary numSequencePoints="5" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="1" visitedMethods="0" numMethods="5" />
+          <Summary numSequencePoints="5" visitedSequencePoints="4" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="80" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="1" numClasses="1" visitedMethods="4" numMethods="5" />
           <FullName>My2Cents.DataInfrastructure.Models.AccountDto</FullName>
           <Methods>
             <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
@@ -1337,49 +1377,49 @@
               <BranchPoints />
               <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="11" ec="1" el="11" bec="0" bev="0" fileid="13" xmlns:p8="xsi" />
             </Method>
-            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
-              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
               <MetadataToken />
               <Name>System.Int32 My2Cents.DataInfrastructure.Models.AccountDto::get_UserId()</Name>
               <FileRef uid="13" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="12" ordinal="0" sl="12" sc="1" el="12" ec="2" bec="0" bev="0" fileid="13" />
+                <SequencePoint vc="4" uspid="12" ordinal="0" sl="12" sc="1" el="12" ec="2" bec="0" bev="0" fileid="13" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="12" ec="1" el="12" bec="0" bev="0" fileid="13" xmlns:p8="xsi" />
+              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="12" ec="1" el="12" bec="0" bev="0" fileid="13" xmlns:p8="xsi" />
             </Method>
-            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
-              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
               <MetadataToken />
               <Name>System.Decimal My2Cents.DataInfrastructure.Models.AccountDto::get_TotalBalance()</Name>
               <FileRef uid="13" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="13" ordinal="0" sl="13" sc="1" el="13" ec="2" bec="0" bev="0" fileid="13" />
+                <SequencePoint vc="4" uspid="13" ordinal="0" sl="13" sc="1" el="13" ec="2" bec="0" bev="0" fileid="13" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="13" ec="1" el="13" bec="0" bev="0" fileid="13" xmlns:p8="xsi" />
+              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="13" ec="1" el="13" bec="0" bev="0" fileid="13" xmlns:p8="xsi" />
             </Method>
-            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
-              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
               <MetadataToken />
               <Name>System.Int32 My2Cents.DataInfrastructure.Models.AccountDto::get_AccountTypeId()</Name>
               <FileRef uid="13" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="14" ordinal="0" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="13" />
+                <SequencePoint vc="4" uspid="14" ordinal="0" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="13" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="14" ec="1" el="14" bec="0" bev="0" fileid="13" xmlns:p8="xsi" />
+              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="14" ec="1" el="14" bec="0" bev="0" fileid="13" xmlns:p8="xsi" />
             </Method>
-            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="0" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
-              <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+            <Method cyclomaticComplexity="1" nPathComplexity="1" sequenceCoverage="100" branchCoverage="100" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
               <MetadataToken />
               <Name>System.Decimal My2Cents.DataInfrastructure.Models.AccountDto::get_Interest()</Name>
               <FileRef uid="13" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="15" ordinal="0" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="13" />
+                <SequencePoint vc="4" uspid="15" ordinal="0" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="13" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="0" uspid="0" p8:type="SequencePoint" ordinal="4" offset="4" sc="0" sl="15" ec="1" el="15" bec="0" bev="0" fileid="13" xmlns:p8="xsi" />
+              <MethodPoint vc="1" uspid="0" p8:type="SequencePoint" ordinal="4" offset="4" sc="0" sl="15" ec="1" el="15" bec="0" bev="0" fileid="13" xmlns:p8="xsi" />
             </Method>
           </Methods>
         </Class>
@@ -1745,9 +1785,9 @@
         </Class>
       </Classes>
     </Module>
-    <Module hash="06215E50-6417-4553-B8FE-EDBDA2063ADD">
+    <Module hash="C23431A8-0BBE-4ECB-BFC2-8D95DDF76683">
       <ModulePath>My2Cents.Logic.dll</ModulePath>
-      <ModuleTime>2022-02-13T10:16:30</ModuleTime>
+      <ModuleTime>2022-02-14T12:59:15</ModuleTime>
       <ModuleName>My2Cents.Logic</ModuleName>
       <Files />
       <Classes />

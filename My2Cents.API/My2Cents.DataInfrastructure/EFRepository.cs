@@ -220,8 +220,6 @@ namespace My2Cents.DataInfrastructure
                           }).ToListAsync();
         }
 
-      private readonly string _connectionString;
-
     public async Task<IEnumerable<TransactionDto>> GetTransactions(int AccountId)
     {
 
@@ -243,12 +241,6 @@ namespace My2Cents.DataInfrastructure
                       AccountType=at.AccountType1,
                       TotalBalance= ac.TotalBalance
                     }).ToListAsync();
-    }
-
-        public EfRepository(string connectionString)
-    {
-        _connectionString = connectionString ?? throw new ArgumentNullException(nameof(connectionString));
-
     }
   }
 }
