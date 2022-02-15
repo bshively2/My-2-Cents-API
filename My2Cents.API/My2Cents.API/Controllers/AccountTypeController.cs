@@ -34,6 +34,23 @@ namespace My2Cents.API.Controllers
             return userAccountList;
         }
 
+        [HttpGet("AccountsTypes")]
+        public async Task<ActionResult<IEnumerable<AccountTypeDto>>> GetAccountTypes()
+        {
+            var accountTypes = await _repository.GetAccountTypes();
+
+            if (accountTypes.Value == null)
+            {
+                return BadRequest();
+            }
+            else if (accountTypes.Value.Count() < 1)
+            {
+                return NoContent();
+            }
+
+            return accountTypes;
+        }
+
         [HttpPost("NewAccount")]
         public async Task<int> PostUserAccount([FromBody, Required] AccountDto newAccount)
         {

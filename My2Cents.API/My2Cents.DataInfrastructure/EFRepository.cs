@@ -196,7 +196,17 @@ namespace My2Cents.DataInfrastructure
                           }).ToListAsync();
         }
 
-    public async Task<IEnumerable<TransactionDto>> GetTransactions(int AccountId)
+        public async Task<ActionResult<IEnumerable<AccountTypeDto>>> GetAccountTypes()
+        {
+            return await (from ic in _context.AccountTypes
+                          select new AccountTypeDto
+                          {
+                              AccountTypeId = ic.AccountTypeId,
+                              AccountType1 = ic.AccountType1
+                          }).ToListAsync();
+        }
+
+        public async Task<IEnumerable<TransactionDto>> GetTransactions(int AccountId)
     {
 
       return await (from ac in _context.Accounts
@@ -218,5 +228,6 @@ namespace My2Cents.DataInfrastructure
                       TotalBalance= ac.TotalBalance
                     }).ToListAsync();
     }
-  }
+
+    }
 }
