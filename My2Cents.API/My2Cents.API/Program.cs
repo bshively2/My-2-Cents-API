@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-string connectionString = builder.Configuration.GetConnectionString("connectionString");
+string connectionString = builder.Configuration.GetConnectionString("My2centsDB");
 
 Console.WriteLine(builder.Configuration.GetSection("Version").GetSection("Number").Value);
 
