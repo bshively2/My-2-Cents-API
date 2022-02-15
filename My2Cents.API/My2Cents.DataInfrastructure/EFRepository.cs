@@ -161,20 +161,27 @@ namespace My2Cents.DataInfrastructure
             return await _context.SaveChangesAsync();
         }
 
-        public async Task<int> PostUserAccount(int userId, decimal totalBalance, int accountTypeId, decimal interest)
+        public async Task<int> PostUserAccount(int userId, int accountTypeId, ActionResult<IEnumerable<AccountTypeDto>> accountTypes)
         {
+            bool valid = false;
+            foreach(var id in accountTypes.Value)
+            {
+                if (id.AccountTypeId == accountTypeId)
+                {
+                    valid = true;
+                    break;
+                }
+            }
+            if (valid == false)
+                return 0;
+
             Account account = new()
             {
                 UserId = userId,
-                TotalBalance = totalBalance,
+                TotalBalance = 100,
                 AccountTypeId = accountTypeId,
-                Interest = interest
+                Interest = 1
             };
-
-            if (totalBalance < 0)
-            {
-                return 0;
-            }
 
             _context.Accounts.Update(account);
             return await _context.SaveChangesAsync();

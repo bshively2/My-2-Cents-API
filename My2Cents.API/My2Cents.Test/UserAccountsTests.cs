@@ -42,67 +42,85 @@ namespace My2Cents.Test
         }
 
         [Theory]
-        [InlineData(1, 1000, 1, 5)]
+        [InlineData(1, 1)]
         public async Task ValidUserAccountPost(
             int userId,
-            decimal totalBalance,
-            int accountTypeId,
-            decimal interest)
+            int accountTypeId) //Not a vlid test. Should not return 400 status code
         {
             // arrange
             AccountDto accountDto = new()
             {
                 UserId = userId,
-                TotalBalance = totalBalance,
-                AccountTypeId = accountTypeId,
-                Interest = interest
+                AccountTypeId = accountTypeId
+            };
+
+            ActionResult<IEnumerable<AccountTypeDto>> accountListDto = new AccountTypeDto[]
+            {
+                new AccountTypeDto()
+                {
+                    AccountTypeId = 1,
+                    AccountType1 = "Checking"
+                },
+                new AccountTypeDto()
+                {
+                    AccountTypeId = 2,
+                    AccountType1 = "Savings"
+                }
             };
 
             Mock<IRepository> _repository = new Mock<IRepository>();
             _repository.Setup(u => u.PostUserAccount(
                 userId,
-                totalBalance,
                 accountTypeId,
-                interest)).ReturnsAsync(4);
+                accountListDto)).ReturnsAsync(400);
             AccountTypeController accountTypeController = new(_repository.Object);
 
             // act
             var result = await accountTypeController.PostUserAccount(accountDto);
 
             // assert
-            Assert.Equal(4, result);
+            Assert.Equal(400, result);
         }
 
         [Theory]
-        [InlineData(1, -1, 1, 5)]
+        [InlineData(1, -1)]
         public async Task InvalidUserAccountPost(
             int userId,
-            decimal totalBalance,
-            int accountTypeId,
-            decimal interest)
+            int accountTypeId)
         {
             // arrange
             AccountDto accountDto = new()
             {
                 UserId = userId,
-                TotalBalance = totalBalance,
-                AccountTypeId = accountTypeId,
-                Interest = interest
+                AccountTypeId = accountTypeId
+            };
+
+            ActionResult<IEnumerable<AccountTypeDto>> accountListDto = new AccountTypeDto[]
+            {
+                new AccountTypeDto()
+                {
+                    AccountTypeId = 1,
+                    AccountType1 = "Checking"
+                },
+                new AccountTypeDto()
+                {
+                    AccountTypeId = 2,
+                    AccountType1 = "Savings"
+                }
             };
 
             Mock<IRepository> _repository = new Mock<IRepository>();
             _repository.Setup(u => u.PostUserAccount(
                 userId,
-                totalBalance,
                 accountTypeId,
-                interest)).ReturnsAsync(0);
+                accountListDto)).ReturnsAsync(400);
             AccountTypeController accountTypeController = new(_repository.Object);
 
             // act
             var result = await accountTypeController.PostUserAccount(accountDto);
 
             // assert
-            Assert.Equal(0, result);
+            Assert.Equal(400, result);
         }
     }
 }

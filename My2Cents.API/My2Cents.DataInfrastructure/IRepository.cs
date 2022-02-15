@@ -41,8 +41,8 @@ namespace My2Cents.DataInfrastructure
         Task<ActionResult<IEnumerable<AccountListDto>>> GetUserAccounts(int userId);
         Task<IEnumerable<TransactionDto>> GetTransactions(int AccountId);
         Task<ActionResult<IEnumerable<AccountTypeDto>>> GetAccountTypes();
-        Task<int> PostUserAccount(int userId, decimal totalBalance, int accountTypeId, decimal interest);
         Task<int> PostTransactionsAsync(int from, int to, decimal amount);
+        Task<int> PostUserAccount(int userId, int accountTypeId, ActionResult<IEnumerable<AccountTypeDto>> accountTypes);
     }
 
 
