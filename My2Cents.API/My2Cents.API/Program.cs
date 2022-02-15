@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 string connectionString = builder.Configuration.GetConnectionString("connectionString");
 
+Console.WriteLine(builder.Configuration.GetSection("Version").GetSection("Number").Value);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
