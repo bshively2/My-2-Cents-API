@@ -54,12 +54,18 @@ namespace My2Cents.API.Controllers
         [HttpPost("NewAccount")]
         public async Task<int> PostUserAccount([FromBody, Required] AccountDto newAccount)
         {
-            return await _repository.PostUserAccount(
+            ActionResult<IEnumerable<AccountTypeDto>> accountTypes = await _repository.GetAccountTypes();
+
+            var result = await _repository.PostUserAccount(
                 newAccount.UserId,
-                newAccount.TotalBalance,
                 newAccount.AccountTypeId,
-                newAccount.Interest
+                accountTypes
                 );
+
+            if (result == 0)
+                return StatusCodes.Status400BadRequest;
+
+            return result;
         }
     }
 }
