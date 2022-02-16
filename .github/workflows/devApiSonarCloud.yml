@@ -2,7 +2,7 @@ name: My-2-Cents-API-SonarCloud
 on:
   push:
     branches:
-      - dev
+      - main
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
