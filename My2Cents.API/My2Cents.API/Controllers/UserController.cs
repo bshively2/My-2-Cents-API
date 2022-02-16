@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using My2Cents.API.Models;
 using My2Cents.DataInfrastructure;
+using My2Cents.DataInfrastructure.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace My2Cents.API.Controllers
 {
@@ -16,11 +17,58 @@ namespace My2Cents.API.Controllers
             _repository = repository;
         }
 
-        [Route("Info")]
-        [HttpGet]
-        public async Task<IEnumerable<UserProfile_Dto>> GetUserInfo(int UserId)
+        [HttpGet("Info")]
+        public async Task<ActionResult<IEnumerable<UserProfileDto>>> GetUserInfo([Required] int UserId)
         {
-            return await _repository.GetUserInfo(UserId);
+            var userProfileInfo = await _repository.GetUserInfo(UserId);
+
+            if (userProfileInfo.Value == null)
+            {
+                return BadRequest();
+            }
+            else if (userProfileInfo.Value.Count() < 1)
+            {
+                return NoContent();
+            }    
+
+            return userProfileInfo;
+        }
+
+        [HttpPost("NewUser")]
+        public async Task<int> PostNewUserInfo([FromBody, Required] PostNewUserDto profile)
+        {
+            
+            return await _repository.PostNewUserInfo(
+                profile.UserId,
+                profile.FirstName,
+                profile.LastName,
+                profile.SecondaryEmail,
+                profile.MailingAddress,
+                profile.Phone,
+                profile.City,
+                profile.State,
+                profile.Employer,
+                profile.WorkAddress,
+                profile.WorkPhone
+                );
+        }
+
+        [HttpPut("Update")]
+        public async Task<int> PutUserInfo([FromBody, Required] UserProfileDto profile)
+        {
+            return await _repository.PutUserInfo(
+                profile.UserId,
+                profile.FirstName,
+                profile.LastName,
+                profile.SecondaryEmail,
+                profile.MailingAddress,
+                profile.Phone,
+                profile.City,
+                profile.State,
+                profile.Employer,
+                profile.WorkAddress,
+                profile.WorkPhone
+                );
         }
     }
 }
