@@ -22,7 +22,6 @@ namespace My2Cents.API.Controllers
     [HttpGet("{AccountId}")]
     public async Task<ActionResult<IEnumerable<TransactionDto>>> GetTransactions(int AccountId)
     {
-      Response.Headers.Add("Access-Control-Allow-Origin", "*");
       var Account=await _repository.GetTransactions(AccountId);
       if (Account.Count() == 0)
         {
