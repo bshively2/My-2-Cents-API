@@ -45,7 +45,7 @@ namespace My2Cents.Test
         [InlineData(1, 1)]
         public async Task ValidUserAccountPost(
             int userId,
-            int accountTypeId) //Not a vlid test. Should not return 400 status code
+            int accountTypeId)
         {
             // arrange
             AccountDto accountDto = new()
@@ -69,17 +69,18 @@ namespace My2Cents.Test
             };
 
             Mock<IRepository> _repository = new Mock<IRepository>();
+            _repository.Setup(v => v.GetAccountTypes()).ReturnsAsync(accountListDto);
             _repository.Setup(u => u.PostUserAccount(
                 userId,
                 accountTypeId,
-                accountListDto)).ReturnsAsync(400);
+                accountListDto)).ReturnsAsync(1);
             AccountTypeController accountTypeController = new(_repository.Object);
 
             // act
             var result = await accountTypeController.PostUserAccount(accountDto);
 
             // assert
-            Assert.Equal(400, result);
+            Assert.Equal(1, result);
         }
 
         [Theory]
@@ -110,6 +111,7 @@ namespace My2Cents.Test
             };
 
             Mock<IRepository> _repository = new Mock<IRepository>();
+            _repository.Setup(v => v.GetAccountTypes()).ReturnsAsync(accountListDto);
             _repository.Setup(u => u.PostUserAccount(
                 userId,
                 accountTypeId,
