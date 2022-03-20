@@ -1,4 +1,3 @@
-
 using Microsoft.AspNetCore.Mvc;
 
 using System;
@@ -10,8 +9,9 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using My2Cents.DataInfrastructure.Models;
+using My2Cents.DataInfrastructure;
 
-namespace My2Cents.DataInfrastructure
+namespace My2Cents.DatabaseManagement
 {
     public class EfRepository : IRepository
     {

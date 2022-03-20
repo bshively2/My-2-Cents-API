@@ -1,5 +1,4 @@
-
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using My2Cents.DataInfrastructure.Models;
 using System;
 using System.Collections.Generic;
@@ -7,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace My2Cents.DataInfrastructure
+namespace My2Cents.DatabaseManagement
 {
     public interface IRepository
     {
@@ -44,9 +43,4 @@ namespace My2Cents.DataInfrastructure
         Task<int> PostTransactionsAsync(int from, int to, decimal amount);
         Task<int> PostUserAccount(int userId, int accountTypeId, ActionResult<IEnumerable<AccountTypeDto>> accountTypes);
     }
-
-
-    
-  
-
 }

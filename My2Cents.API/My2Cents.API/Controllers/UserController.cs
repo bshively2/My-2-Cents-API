@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using My2Cents.DataInfrastructure;
+using My2Cents.DatabaseManagement;
 using My2Cents.DataInfrastructure.Models;
 using System.ComponentModel.DataAnnotations;
 
@@ -29,7 +29,7 @@ namespace My2Cents.API.Controllers
             else if (userProfileInfo.Value.Count() < 1)
             {
                 return NoContent();
-            }    
+            }
 
             return userProfileInfo;
         }
@@ -37,7 +37,7 @@ namespace My2Cents.API.Controllers
         [HttpPost("NewUser")]
         public async Task<int> PostNewUserInfo([FromBody, Required] PostNewUserDto profile)
         {
-            
+
             return await _repository.PostNewUserInfo(
                 profile.UserId,
                 profile.FirstName,

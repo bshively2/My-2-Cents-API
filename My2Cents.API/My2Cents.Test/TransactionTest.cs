@@ -1,6 +1,6 @@
 using Moq;
 using My2Cents.API.Controllers;
-using My2Cents.DataInfrastructure;
+using My2Cents.DatabaseManagement;
 using My2Cents.DataInfrastructure.Models;
 using System.Threading.Tasks;
 using Xunit;
@@ -10,7 +10,7 @@ namespace My2Cents.Test
     public class TransactionTest
     {
         [Theory]
-        [InlineData(-1,-1,-20)]
+        [InlineData(-1, -1, -20)]
         public async Task InvalidBodyInPostTransactions(int from, int to, decimal amount)
         {
             // arrange

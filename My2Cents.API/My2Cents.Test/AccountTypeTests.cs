@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Moq;
 using My2Cents.API.Controllers;
-using My2Cents.DataInfrastructure;
+using My2Cents.DatabaseManagement;
 using My2Cents.DataInfrastructure.Models;
 using System;
 using System.Collections.Generic;

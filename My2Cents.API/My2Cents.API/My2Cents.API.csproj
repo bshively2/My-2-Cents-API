@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\My2Cents.DataInfrastructure\My2Cents.DataInfrastructure.csproj" />
+    <ProjectReference Include="..\My2Cents.DatabaseManagement\My2Cents.DatabaseManagement.csproj" />
   </ItemGroup>
 
 </Project>
