@@ -1,5 +1,5 @@
 
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace My2Cents.DataInfrastructure
         // ----------------------- Transaction btw accounts ------------------------
         public async Task<int> PostTransactionsAsync(int from, int to, decimal amount)
         {
-            
+
             var payFromAccount = _context.Accounts.SingleOrDefault(c => c.AccountId == from);
             var payToAccount = _context.Accounts.SingleOrDefault(b => b.AccountId == to);
 
@@ -164,7 +164,7 @@ namespace My2Cents.DataInfrastructure
         public async Task<int> PostUserAccount(int userId, int accountTypeId, ActionResult<IEnumerable<AccountTypeDto>> accountTypes)
         {
             bool valid = false;
-            foreach(var id in accountTypes.Value)
+            foreach (var id in accountTypes.Value)
             {
                 if (id.AccountTypeId == accountTypeId)
                 {
@@ -214,27 +214,27 @@ namespace My2Cents.DataInfrastructure
         }
 
         public async Task<IEnumerable<TransactionDto>> GetTransactions(int AccountId)
-    {
+        {
 
-      return await (from ac in _context.Accounts
-                    join tr in _context.Transactions on ac.AccountId equals tr.AccountId into trjoin
-                    from tran in trjoin.DefaultIfEmpty()                    
-                    join at in _context.AccountTypes on ac.AccountTypeId equals at.AccountTypeId
-                    where tran.AccountId == AccountId
-                    orderby tran.TransactionDate descending
-                    select new TransactionDto
-                    {
-                      TransactionId = tran.TransactionId,
-                      AccountId = tran.AccountId,
-                      Amount = tran.Amount,
-                      TransactionName = tran.TransactionName,
-                      TransactionDate = tran.TransactionDate,
-                      Authorized = tran.Authorized,
-                      LineAmount=tran.LineAmount,
-                      AccountType=at.AccountType1,
-                      TotalBalance= ac.TotalBalance
-                    }).ToListAsync();
-    }
+            return await (from ac in _context.Accounts
+                          join tr in _context.Transactions on ac.AccountId equals tr.AccountId into trjoin
+                          from tran in trjoin.DefaultIfEmpty()
+                          join at in _context.AccountTypes on ac.AccountTypeId equals at.AccountTypeId
+                          where tran.AccountId == AccountId
+                          orderby tran.TransactionDate descending
+                          select new TransactionDto
+                          {
+                              TransactionId = tran.TransactionId,
+                              AccountId = tran.AccountId,
+                              Amount = tran.Amount,
+                              TransactionName = tran.TransactionName,
+                              TransactionDate = tran.TransactionDate,
+                              Authorized = tran.Authorized,
+                              LineAmount = tran.LineAmount,
+                              AccountType = at.AccountType1,
+                              TotalBalance = ac.TotalBalance
+                          }).ToListAsync();
+        }
 
     }
 }
