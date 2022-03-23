@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using My2Cents.DataInfrastructure;
+using My2Cents.DatabaseManagement;
 using My2Cents.DataInfrastructure.Models;
 
 namespace My2Cents.API.Controllers

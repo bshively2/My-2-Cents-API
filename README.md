@@ -26,4 +26,4 @@ The My 2 Cents API that uses Entity Framework to connect the front end Angular w
 - GitHub
 
 ## Getting Started
-- See `STARTUP.md`
+- See `STARTUP.md`: https://github.com/Revature-2-Cents/My-2-Cents-UI/blob/main/STARTUP.md
